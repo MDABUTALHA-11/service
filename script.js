@@ -265,4 +265,73 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: true });
 
+  // ============================================================
+  // 6. UNIVERSAL ATTACHED PAYMENT DOCK (DESKTOP & MOBILE)
+  // ============================================================
+  const dock = document.getElementById("attachedPaymentDock");
+  const dockSelect = document.getElementById("dockPackageSelect");
+  const dockStripeBtn = document.getElementById("dockStripeBtn");
+  const dockStripeBtnText = document.getElementById("dockStripeBtnText");
+  const dockTierName = document.getElementById("dockTierName");
+  const dockTierPrice = document.getElementById("dockTierPrice");
+
+  const tierPrices = {
+    "Basic CV Package": "$4.99",
+    "Professional CV": "$9.99",
+    "CV + Cover Letter": "$14.99",
+    "CV + LinkedIn Revamp": "$19.99",
+    "Complete Job Package": "$24.99"
+  };
+
+  function updateDockTier(tier) {
+    if (!tier || !CONFIG.stripeLinks[tier]) return;
+    const price = tierPrices[tier] || "$4.99";
+    const checkoutUrl = CONFIG.stripeLinks[tier];
+
+    if (dockSelect) dockSelect.value = tier;
+    if (dockTierName) dockTierName.textContent = tier;
+    if (dockTierPrice) dockTierPrice.textContent = price;
+    if (dockStripeBtn) dockStripeBtn.href = checkoutUrl;
+    if (dockStripeBtnText) dockStripeBtnText.textContent = `ORDER NOW — ${price}`;
+
+    // Synchronize the application form's package select if on page
+    const appPackageSelect = document.getElementById("packageSelect");
+    if (appPackageSelect) {
+      for (let i = 0; i < appPackageSelect.options.length; i++) {
+        if (appPackageSelect.options[i].value === tier) {
+          appPackageSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
+
+  if (dockSelect) {
+    dockSelect.addEventListener("change", (e) => {
+      updateDockTier(e.target.value);
+    });
+  }
+
+  // Sync dock whenever a user clicks "Submit Application" from pricing cards
+  document.querySelectorAll(".apply-tier-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tier = btn.getAttribute("data-tier");
+      if (tier) updateDockTier(tier);
+    });
+  });
+
+  // Dock visibility on scroll (smooth reveal after scrolling 100px)
+  if (dock) {
+    function handleDockVisibility() {
+      if (window.scrollY > 90) {
+        dock.classList.add("visible");
+      } else {
+        dock.classList.remove("visible");
+      }
+    }
+    window.addEventListener("scroll", handleDockVisibility, { passive: true });
+    // Initial check on load
+    handleDockVisibility();
+  }
+
 });

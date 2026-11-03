@@ -984,23 +984,59 @@
     </div>
   </footer>
 
-  <!-- Mobile Sticky Bottom Action Bar (Thumb-friendly with iOS Safe Area Padding) -->
-  <div class="mobile-sticky-bar">
-    <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" target="_blank" class="mobile-bar-btn mobile-bar-stripe">
-      <i class="fa-solid fa-bolt"></i> Order $4.99
-    </a>
-    <a href="#application" class="mobile-bar-btn mobile-bar-intake">
-      <i class="fa-solid fa-file-pen"></i> Apply / Submit
-    </a>
-  </div>
+  <!-- Universal Attached Payment Dock (Docked & Perfectly Attached on Both Mobile & Desktop) -->
+  <aside class="attached-payment-dock" id="attachedPaymentDock" aria-label="Attached Checkout Dock">
+    <div class="dock-container">
+      
+      <!-- Left: Atelier Value & Live Tier Badge (Desktop View) -->
+      <div class="dock-left">
+        <div class="dock-badge-seal">❖</div>
+        <div class="dock-text">
+          <span class="dock-label">ARCHIVAL ATELIER CHECKOUT</span>
+          <div class="dock-headline">
+            <span id="dockTierName">Basic CV Package</span>
+            <span class="dock-price" id="dockTierPrice">$4.99</span>
+            <span class="dock-meta">· One-Time Fee · 24h Express Turnaround</span>
+          </div>
+        </div>
+      </div>
 
-  <!-- Floating Action Button for Desktop -->
-  <a href="#application" 
-     class="floating-apply" 
-     aria-label="Submit CV Application">
-    <i class="fa-solid fa-file-pen"></i>
-    <span class="floating-tooltip">Submit CV Application</span>
-  </a>
+      <!-- Center: Quick Tier Switcher (Interactive on Desktop & Mobile) -->
+      <div class="dock-center">
+        <div class="dock-select-wrapper">
+          <i class="fa-solid fa-layer-group dock-select-icon"></i>
+          <select id="dockPackageSelect" class="dock-select" aria-label="Select Package Tier">
+            <option value="Basic CV Package" data-price="$4.99" selected>Basic CV Package — $4.99</option>
+            <option value="Professional CV" data-price="$9.99">Professional CV — $9.99 (Popular)</option>
+            <option value="CV + Cover Letter" data-price="$14.99">CV + Cover Letter — $14.99</option>
+            <option value="CV + LinkedIn Revamp" data-price="$19.99">CV + LinkedIn Revamp — $19.99</option>
+            <option value="Complete Job Package" data-price="$24.99">Complete Job Suite — $24.99 (VIP)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Right: Direct Payment & Intake Action Buttons -->
+      <div class="dock-right">
+        <!-- Direct Stripe Checkout Button -->
+        <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" 
+           target="_blank" 
+           id="dockStripeBtn" 
+           class="dock-btn dock-btn-stripe pulse-glow">
+          <i class="fa-solid fa-lock"></i>
+          <span id="dockStripeBtnText">ORDER NOW — $4.99</span>
+        </a>
+
+        <!-- Submit Intake Details Button -->
+        <a href="#application" 
+           class="dock-btn dock-btn-intake"
+           id="dockIntakeBtn">
+          <i class="fa-solid fa-file-pen"></i>
+          <span>Apply / Intake</span>
+        </a>
+      </div>
+
+    </div>
+  </aside>
 
   <script src="script.js"></script>
 </body>

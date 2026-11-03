@@ -65,6 +65,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 74px; /* Space for universal attached checkout dock */
 }
 
 a {
@@ -874,6 +875,7 @@ img {
    ============================================================ */
 .section {
   padding: 95px 0;
+  scroll-margin-top: 80px;
 }
 
 .section-title-wrap {
@@ -1186,11 +1188,12 @@ img {
 .pricing-section {
   background: var(--black-pitch);
   border-bottom: 1px solid var(--black-border);
+  scroll-margin-top: 80px;
 }
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
   margin-bottom: 44px;
   align-items: stretch;
@@ -1200,18 +1203,19 @@ img {
   background: var(--black-card);
   border: 1px solid var(--black-border);
   border-radius: var(--radius-md);
-  padding: 28px 18px;
+  padding: 28px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   transition: var(--transition);
+  min-width: 0;
 }
 
 .pricing-card:hover {
   border-color: var(--pure-white);
   transform: translateY(-6px);
-  box-shadow: 0 12px 36px rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 36px rgba(255, 255, 255, 0.08);
 }
 
 .popular-card {
@@ -1337,6 +1341,21 @@ img {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.tier-actions .btn {
+  padding: 11px 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 44px;
 }
 
 /* Security Guarantee Banner */
@@ -1748,113 +1767,205 @@ img {
 }
 
 /* ============================================================
-   MOBILE STICKY ACTION BAR (iOS Safe-Area Padding)
+   ATTACHED UNIVERSAL PAYMENT DOCK (DESKTOP & MOBILE)
    ============================================================ */
-.mobile-sticky-bar {
-  display: none;
+.attached-payment-dock {
   position: fixed;
   bottom: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  background: rgba(8, 8, 12, 0.97);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(6, 6, 8, 0.95);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-top: 1px solid var(--black-border-light);
-  padding: 10px 16px;
-  padding-bottom: max(10px, env(safe-area-inset-bottom));
+  box-shadow: 0 -8px 36px rgba(0, 0, 0, 0.9);
   z-index: 990;
-  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.85);
-  gap: 10px;
+  padding: 10px 20px;
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  pointer-events: none;
 }
 
-.mobile-bar-btn {
-  flex: 1;
+.attached-payment-dock.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dock-container {
+  max-width: 1240px;
+  margin: 0 auto;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Left: Atelier Value & Live Tier Badge (Desktop View) */
+.dock-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.dock-badge-seal {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--black-border-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pure-white);
+  font-size: 1rem;
+  background: #0f0f15;
+}
+
+.dock-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.dock-label {
+  font-family: var(--font-classical);
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  color: var(--silver-dim);
+  text-transform: uppercase;
+}
+
+.dock-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+#dockTierName {
+  font-family: var(--font-classical);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--pure-white);
+}
+
+.dock-price {
+  font-family: var(--font-decorative);
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--pure-white);
+}
+
+.dock-meta {
+  font-size: 0.72rem;
+  color: var(--silver-dim);
+}
+
+/* Center: Quick Tier Switcher */
+.dock-center {
+  flex: 1;
+  max-width: 330px;
+}
+
+.dock-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dock-select-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--silver-mid);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.dock-select {
+  width: 100%;
+  background: #0e0e14;
+  border: 1px solid var(--black-border-light);
+  border-radius: var(--radius-xs);
+  color: var(--pure-white);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 30px 8px 32px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a1a1aa' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  transition: var(--transition);
+}
+
+.dock-select:focus {
+  outline: none;
+  border-color: var(--silver-mid);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.dock-select option {
+  background: #0d0d12;
+  color: var(--pure-white);
+  padding: 8px;
+}
+
+/* Right: Direct Payment & Intake Action Buttons */
+.dock-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.dock-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 14px;
-  font-size: 0.92rem;
-  font-weight: 800;
-  border-radius: var(--radius-sm);
-  text-align: center;
-  min-height: 48px;
-}
-
-.mobile-bar-stripe {
-  background: var(--pure-white);
-  color: var(--pure-black);
-}
-
-.mobile-bar-wa,
-.mobile-bar-intake {
-  background: #111118;
-  border: 1px solid var(--black-border-light);
-  color: var(--pure-white);
-}
-
-.mobile-bar-wa:hover,
-.mobile-bar-intake:hover {
-  background: #1c1c28;
-  border-color: var(--silver-mid);
-  color: #ffffff;
-}
-
-/* ============================================================
-   DESKTOP FLOATING APPLICATION INTAKE BUTTON
-   ============================================================ */
-.floating-apply,
-.floating-whatsapp {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 58px;
-  height: 58px;
-  background: var(--pure-white);
-  color: var(--pure-black);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.35rem;
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
-  z-index: 900;
-  transition: var(--transition);
-  border: 1px solid #d4d4d8;
-}
-
-.floating-apply:hover,
-.floating-whatsapp:hover {
-  transform: scale(1.1) rotate(6deg);
-  background: #f4f4f5;
-  box-shadow: 0 14px 40px rgba(255, 255, 255, 0.4);
-}
-
-.floating-apply i,
-.floating-whatsapp i {
-  color: var(--pure-black);
-}
-
-.floating-tooltip {
-  visibility: hidden;
-  position: absolute;
-  right: 74px;
-  background: #000000;
-  border: 1px solid var(--black-border-light);
-  color: var(--pure-white);
+  padding: 10px 18px;
+  font-family: var(--font-classical);
   font-size: 0.8rem;
-  font-weight: 700;
-  padding: 6px 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
   border-radius: var(--radius-xs);
+  text-decoration: none;
+  transition: var(--transition);
   white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s;
 }
 
-.floating-apply:hover .floating-tooltip,
-.floating-whatsapp:hover .floating-tooltip {
-  visibility: visible;
-  opacity: 1;
+.dock-btn-stripe {
+  background: var(--pure-white);
+  color: var(--pure-black);
+  border: 1px solid var(--pure-white);
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2);
+}
+
+.dock-btn-stripe:hover {
+  background: #eaeaea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.35);
+}
+
+.dock-btn-stripe i {
+  color: var(--pure-black);
+}
+
+.dock-btn-intake {
+  background: #111118;
+  color: var(--silver-light);
+  border: 1px solid var(--black-border-light);
+}
+
+.dock-btn-intake:hover {
+  background: #1c1c26;
+  border-color: var(--silver-mid);
+  color: var(--pure-white);
+  transform: translateY(-2px);
 }
 
 /* ============================================================
@@ -1874,10 +1985,21 @@ img {
 /* ============================================================
    RESPONSIVE DESIGN (DESKTOP & MOBILE TUNING)
    ============================================================ */
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 901px) {
   .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  .pricing-card:nth-child(1),
+  .pricing-card:nth-child(2),
+  .pricing-card:nth-child(3) {
+    grid-column: span 2;
+  }
+  .pricing-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+  .pricing-card:nth-child(5) {
+    grid-column: 4 / span 2;
   }
 }
 
@@ -1916,12 +2038,25 @@ img {
     gap: 20px;
   }
 
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .pricing-card:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .dock-left .dock-meta {
+    display: none;
   }
 }
 
@@ -1930,14 +2065,61 @@ img {
     padding: 0 18px;
   }
 
-  /* Show Mobile Sticky Bar */
-  .mobile-sticky-bar {
-    display: flex;
+  .attached-payment-dock {
+    padding: 8px 12px;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
   }
 
-  .floating-apply,
-  .floating-whatsapp {
+  .dock-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dock-left {
     display: none;
+  }
+
+  .dock-center {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dock-select {
+    padding: 8px 26px 8px 30px;
+    font-size: 0.8rem;
+    height: 38px;
+  }
+
+  .dock-right {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+
+  .dock-btn {
+    flex: 1;
+    min-height: 44px;
+    padding: 10px 8px;
+    font-size: 0.78rem;
+  }
+
+  .security-banner {
+    padding: 20px 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .security-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .security-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 1.6rem;
   }
 
   /* Mobile Navigation Drawer */
@@ -2000,6 +2182,11 @@ img {
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .hero-cta-group .btn {
