@@ -1,153 +1,177 @@
 /**
- * CareerForge — Premium CV Landing Page
- * Interactive JS: Scroll Reveal, Accordion, Mobile Nav
- *
- * The $4.99 Stripe Payment Link is hardcoded directly in the HTML <a> tags.
- * No JS redirect needed — it opens directly on Stripe's hosted checkout page.
+ * CareerForge — Timeless Black & White Luxury CV Service
+ * Mobile-First Interactive Engine:
+ * 1. Seamless mobile navigation drawer
+ * 2. Instant WhatsApp direct message generator (Phone: +8801742761220)
+ * 3. Stripe checkout handling ($4.99 direct link)
+ * 4. FAQ Accordion
+ * 5. Scroll Reveal animations
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+const CONFIG = {
+  // Client's verified WhatsApp number with country code
+  whatsappNumber: "8801742761220", 
+
+  // Primary Stripe Payment Link for $4.99 Basic CV
+  stripeBasicLink: "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
+
+  // Stripe Payment Links for other packages (can be updated anytime)
+  stripeLinks: {
+    "Basic CV Package": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
+    "Professional CV": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
+    "CV + Cover Letter": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
+    "CV + LinkedIn Revamp": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
+    "Complete Job Package": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600"
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
 
   // ============================================================
-  // 1. SCROLL REVEAL (Intersection Observer)
+  // 1. MOBILE NAVIGATION DRAWER & TOUCH ACCESSIBILITY
   // ============================================================
-  const revealEls = document.querySelectorAll('[data-reveal], [data-reveal-delay]');
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+  const navBackdrop = document.getElementById("navBackdrop");
 
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-  );
-
-  revealEls.forEach((el) => revealObserver.observe(el));
-
-  // ============================================================
-  // 2. STICKY NAV — add shadow on scroll
-  // ============================================================
-  const nav = document.getElementById('nav');
-
-  const onScroll = () => {
-    if (window.scrollY > 60) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.5)';
-    } else {
-      nav.style.boxShadow = 'none';
+  function openMobileNav() {
+    if (!navMenu) return;
+    navMenu.classList.add("open");
+    if (navBackdrop) navBackdrop.classList.add("active");
+    if (hamburger) {
+      hamburger.classList.add("active");
+      hamburger.setAttribute("aria-expanded", "true");
     }
-  };
+    document.body.style.overflow = "hidden"; // Prevent background scroll
+  }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  function closeMobileNav() {
+    if (!navMenu) return;
+    navMenu.classList.remove("open");
+    if (navBackdrop) navBackdrop.classList.remove("active");
+    if (hamburger) {
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    }
+    document.body.style.overflow = "";
+  }
 
-  // ============================================================
-  // 3. MOBILE HAMBURGER MENU
-  // ============================================================
-  const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navMenu');
-
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-      // Animate hamburger bars
-      const bars = hamburger.querySelectorAll('span');
-      if (isOpen) {
-        bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        bars[1].style.opacity   = '0';
-        bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      if (navMenu && navMenu.classList.contains("open")) {
+        closeMobileNav();
       } else {
-        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
+        openMobileNav();
       }
-    });
-
-    // Close when a link is clicked
-    navMenu.querySelectorAll('.nav__link').forEach((link) => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.querySelectorAll('span').forEach(b => {
-          b.style.transform = '';
-          b.style.opacity   = '';
-        });
-      });
     });
   }
 
+  if (navBackdrop) {
+    navBackdrop.addEventListener("click", closeMobileNav);
+  }
+
+  // Close nav on any link click
+  document.querySelectorAll(".nav__link, .mobile-nav-cta").forEach((link) => {
+    link.addEventListener("click", closeMobileNav);
+  });
+
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navMenu && navMenu.classList.contains("open")) {
+      closeMobileNav();
+    }
+  });
+
   // ============================================================
-  // 4. FAQ ACCORDION
+  // 2. SCROLL REVEAL (Intersection Observer)
   // ============================================================
-  const accordionItems = document.querySelectorAll('.accordion__item');
+  const revealElements = document.querySelectorAll("[data-reveal]");
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -20px 0px" }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    // Fallback for older browsers
+    revealElements.forEach((el) => el.classList.add("visible"));
+  }
+
+  // ============================================================
+  // 3. FAQ ACCORDION (Touch friendly)
+  // ============================================================
+  const accordionItems = document.querySelectorAll(".accordion__item");
 
   accordionItems.forEach((item) => {
-    const header = item.querySelector('.accordion__header');
-    const body   = item.querySelector('.accordion__body');
+    const header = item.querySelector(".accordion__header");
+    const body = item.querySelector(".accordion__body");
 
     if (!header || !body) return;
 
-    header.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
+    header.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
 
-      // Close all
+      // Close all others
       accordionItems.forEach((other) => {
-        other.classList.remove('open');
-        const otherBody = other.querySelector('.accordion__body');
-        if (otherBody) otherBody.style.maxHeight = null;
+        if (other !== item) {
+          other.classList.remove("open");
+          const otherBody = other.querySelector(".accordion__body");
+          if (otherBody) otherBody.style.maxHeight = null;
+        }
       });
 
-      // Open clicked (if it was closed)
+      // Toggle clicked
       if (!isOpen) {
-        item.classList.add('open');
-        body.style.maxHeight = body.scrollHeight + 'px';
+        item.classList.add("open");
+        body.style.maxHeight = body.scrollHeight + "px";
+      } else {
+        item.classList.remove("open");
+        body.style.maxHeight = null;
       }
     });
   });
 
-  // Open first FAQ item on load
+  // Open first item by default
   if (accordionItems.length > 0) {
-    const first = accordionItems[0];
-    const firstBody = first.querySelector('.accordion__body');
-    first.classList.add('open');
-    if (firstBody) firstBody.style.maxHeight = firstBody.scrollHeight + 'px';
+    const firstItem = accordionItems[0];
+    const firstBody = firstItem.querySelector(".accordion__body");
+    firstItem.classList.add("open");
+    if (firstBody) firstBody.style.maxHeight = firstBody.scrollHeight + "px";
   }
 
   // ============================================================
-  // 5. MARQUEE — pause on hover
+  // 4. DYNAMIC WHATSAPP LINKS AUTO-INJECTION
   // ============================================================
-  const marqueeTrack = document.querySelector('.marquee-strip__track');
-  if (marqueeTrack) {
-    marqueeTrack.addEventListener('mouseenter', () => {
-      marqueeTrack.style.animationPlayState = 'paused';
-    });
-    marqueeTrack.addEventListener('mouseleave', () => {
-      marqueeTrack.style.animationPlayState = 'running';
-    });
-  }
+  // Ensures any WhatsApp element uses the configured phone number
+  document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+    const currentHref = link.getAttribute("href");
+    if (!currentHref.includes(CONFIG.whatsappNumber)) {
+      // Preserve existing text query parameter if present
+      const url = new URL(currentHref, window.location.origin);
+      const textParam = url.searchParams.get("text") || "Hi! I want to order a professional CV.";
+      link.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(textParam)}`;
+    }
+  });
 
   // ============================================================
-  // 6. SMOOTH ACTIVE NAV HIGHLIGHT ON SCROLL
+  // 5. STICKY NAVBAR SHADOW & SCROLL INDICATOR
   // ============================================================
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav__link');
-
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + entry.target.id) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    },
-    { threshold: 0.35 }
-  );
-
-  sections.forEach((sec) => sectionObserver.observe(sec));
+  const nav = document.getElementById("nav");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      if (nav) nav.classList.add("scrolled");
+    } else {
+      if (nav) nav.classList.remove("scrolled");
+    }
+  }, { passive: true });
 
 });

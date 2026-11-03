@@ -2,551 +2,576 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CareerBoost — Professional CV Writing from $4.99 | ATS-Optimized Resumes</title>
-  <meta name="description" content="Land your dream job with a recruiter-approved, ATS-optimized resume crafted to perfection. Starting at $4.99. Trusted by 2,500+ job seekers worldwide.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>CareerForge — Timeless Black & White Executive CV Writing | $4.99</title>
+  <meta name="description" content="Land your dream career with an ATS-certified, recruiter-approved resume crafted in timeless monochrome authority. Starting at $4.99. 24h express delivery.">
+  <meta name="theme-color" content="#000000">
 
-  <!-- Google Fonts: Cormorant Garamond (Timeless Serif) + DM Sans (Modern Body) -->
+  <!-- Google Fonts: Cinzel (Classical Roman Authority) + Cormorant Garamond (Editorial Elegance) + Inter (Crisp Modern Legibility) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ===================== ANNOUNCEMENT BAR ===================== -->
-  <div class="top-bar">
-    <div class="container top-bar__inner">
-      <span class="top-bar__text">
-        <span class="top-bar__dot"></span>
-        Limited Offer — ATS-Optimised Professional CV for only&nbsp;<strong>$4.99</strong>
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-bar__content">
+      <span class="announcement-bar__text">
+        <span class="pulse-dot"></span>
+        <strong>LIMITED ALLOTMENT:</strong> ATS-Engineered Executive CV for only <strong>$4.99</strong>
       </span>
-      <a href="#pricing" class="top-bar__cta">Claim Offer <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" target="_blank" class="announcement-bar__btn">
+        Claim $4.99 Offer <i class="fa-solid fa-arrow-right"></i>
+      </a>
     </div>
   </div>
 
-  <!-- ===================== NAVIGATION ===================== -->
-  <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="#" class="nav__brand">
-        <div class="nav__brand-mark">
-          <i class="fa-solid fa-crown"></i>
+  <!-- Mobile Drawer Backdrop -->
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <!-- Navigation Header -->
+  <header class="header" id="nav">
+    <div class="container header__inner">
+      <!-- Brand Logo with Classical Crest -->
+      <a href="#" class="brand-logo">
+        <img src="assets/brand_crest_emblem.jpg" alt="CareerForge Crest" class="brand-crest">
+        <div class="brand-text">
+          <span class="brand-title">CAREERFORGE</span>
+          <span class="brand-tagline">ANNO MMXXVI · EST. AUTHORITY</span>
         </div>
-        <span>Career<em>Forge</em></span>
       </a>
 
-      <nav class="nav__menu" id="navMenu">
-        <a href="#craft" class="nav__link">The Craft</a>
-        <a href="#process" class="nav__link">Process</a>
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#philosophy" class="nav__link">The Standard</a>
+        <a href="#services" class="nav__link">What You Receive</a>
+        <a href="#process" class="nav__link">The Method</a>
         <a href="#pricing" class="nav__link">Packages</a>
-        <a href="#proof" class="nav__link">Proof</a>
+        <a href="#proof" class="nav__link">Testimonials</a>
         <a href="#faq" class="nav__link">FAQ</a>
+        
+        <!-- Mobile Drawer Extra Buttons -->
+        <div class="mobile-menu-footer">
+          <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" target="_blank" class="btn btn-white btn-block mobile-nav-cta">
+            <i class="fa-solid fa-bolt"></i> Order Basic CV — $4.99
+          </a>
+          <a href="https://wa.me/8801742761220?text=Hi%21%20I%20want%20to%20order%20the%20$4.99%20CV%20Package." target="_blank" class="btn btn-wa-dark btn-block mobile-nav-cta">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (+8801742761220)
+          </a>
+        </div>
       </nav>
 
-      <div class="nav__actions">
-        <a href="https://wa.me/1234567890?text=Hello%2C%20I%27d%20like%20to%20order%20a%20CV." target="_blank" class="btn btn--ghost btn--sm">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      <!-- Desktop Header Actions -->
+      <div class="header__actions">
+        <a href="https://wa.me/8801742761220?text=Hi%21%20I%27d%20like%20to%20inquire%20about%20your%20CV%20writing%20services." target="_blank" class="btn-wa-header" title="WhatsApp Support">
+          <i class="fa-brands fa-whatsapp"></i> +880 1742-761220
         </a>
-        <a href="#pricing" class="btn btn--gold btn--sm">Order Now</a>
-        <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" target="_blank" class="btn btn-white btn-sm header-cta">
+          Order — $4.99
+        </a>
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="hero">
-    <!-- Decorative background elements -->
-    <div class="hero__bg-grid"></div>
-    <div class="hero__orb hero__orb--1"></div>
-    <div class="hero__orb hero__orb--2"></div>
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-grid">
 
-    <div class="container hero__inner">
-
-      <!-- Left — Copy -->
-      <div class="hero__copy" data-reveal>
-        <div class="hero__label">
-          <span class="label-dot"></span>
-          Trusted by 2,500+ Job Seekers Worldwide
+      <!-- Left Column: High-Impact Typography & Copy -->
+      <div class="hero-copy" data-reveal>
+        <div class="hero-tag">
+          <span class="ornament-cross">❖</span>
+          <span>THE 1000-YEAR STANDARD IN RESUME EXCELLENCE</span>
         </div>
 
-        <h1 class="hero__headline">
-          Your career deserves a CV
-          <em>written for the ages.</em>
+        <h1 class="hero-title">
+          YOUR DREAM CAREER STARTS WITH A <span class="highlight-underline">LEGENDARY CV</span>.
         </h1>
 
-        <p class="hero__sub">
-          Recruiters spend six seconds on a resume. We make each one unforgettable — crafted with precision, ATS-optimised for modern hiring systems, delivered within 24 hours.
+        <p class="hero-description">
+          Recruiters spend precisely six seconds evaluating your life’s work. Over 75% are filtered out by robotic ATS algorithms before human eyes ever see them. We engineer an unyielding, recruiter-approved masterpiece built to command respect and open doors worldwide — <strong>starting at just $4.99</strong>.
         </p>
 
-        <ul class="hero__checklist">
-          <li><i class="fa-solid fa-check"></i> 98% ATS Pass-Rate — tested across Workday, Taleo & Greenhouse</li>
-          <li><i class="fa-solid fa-check"></i> Recruiter-approved layout & impact-driven bullet writing</li>
-          <li><i class="fa-solid fa-check"></i> Editable Word (.docx) + print-ready PDF delivered in 24 h</li>
-          <li><i class="fa-solid fa-check"></i> International standard — USA, UK, Canada, UAE, Europe & Asia</li>
+        <!-- Bullet Highlights -->
+        <ul class="hero-bullets">
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <div><strong>100% ATS-Friendly Parsing</strong> — Proven on Workday, Taleo, Greenhouse & iCIMS.</div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <div><strong>Timeless Black & White Executive Aesthetics</strong> — Pristine typographic hierarchy.</div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <div><strong>Job-Winning High-Impact Content</strong> — Metric-driven accomplishment storytelling.</div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <div><strong>Fully Editable Source File Included</strong> — Microsoft Word (.docx) & PDF format.</div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <div><strong>Guaranteed 24-Hour Express Delivery</strong> — Worldwide service with revisions.</div>
+          </li>
         </ul>
 
-        <div class="hero__actions">
-          <!-- PRIMARY: Real Stripe link for $4.99 -->
-          <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600"
-             target="_blank"
-             class="btn btn--gold btn--lg pulse">
-            <i class="fa-solid fa-bolt"></i>
-            Order Now — Only $4.99
+        <!-- Primary Call-To-Action Group -->
+        <div class="hero-cta-group">
+          <!-- Real Stripe Link for $4.99 -->
+          <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" 
+             target="_blank" 
+             class="btn btn-white btn-lg pulse-glow">
+            <i class="fa-solid fa-bolt"></i> ORDER NOW — ONLY $4.99
           </a>
-          <a href="https://wa.me/1234567890?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20the%20CV%20service." target="_blank" class="btn btn--outline btn--lg">
-            <i class="fa-brands fa-whatsapp"></i>
-            Message on WhatsApp
+          <!-- Verified Client WhatsApp -->
+          <a href="https://wa.me/8801742761220?text=Hi%21%20I%20am%20ready%20to%20order%20the%20$4.99%20CV%20service." 
+             target="_blank" 
+             class="btn btn-outline-white btn-lg">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Order (+8801742761220)
           </a>
         </div>
 
-        <div class="hero__trust">
-          <div class="trust__avatars">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80" alt="Client">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=80" alt="Client">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&auto=format&fit=crop&q=80" alt="Client">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&auto=format&fit=crop&q=80" alt="Client">
+        <!-- Trust Mini Bar -->
+        <div class="hero-trust-bar">
+          <div class="trust-avatars">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=90&auto=format&fit=crop&q=80" alt="Executive 1">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=90&auto=format&fit=crop&q=80" alt="Executive 2">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=90&auto=format&fit=crop&q=80" alt="Executive 3">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=90&auto=format&fit=crop&q=80" alt="Executive 4">
           </div>
-          <div class="trust__text">
-            <div class="trust__stars">★★★★★ <strong>4.9 / 5</strong></div>
-            <span>From 850+ verified reviews on Fiverr & Upwork</span>
+          <div class="trust-copy">
+            <div class="trust-stars">★★★★★ <strong>4.9 / 5.0</strong></div>
+            <p>Trusted by <strong>2,500+ candidates</strong> placed across Fortune 500 & global tech.</p>
           </div>
         </div>
       </div>
 
-      <!-- Right — Floating CV Mockup -->
-      <div class="hero__visual" data-reveal-delay>
-
-        <!-- Offer Sticker -->
-        <div class="sticker">
-          <span class="sticker__label">SPECIAL</span>
-          <span class="sticker__price">$4.99</span>
-          <span class="sticker__sub">one-time</span>
-        </div>
-
-        <!-- Floating Proof Badges -->
-        <div class="float-badge float-badge--top">
-          <div class="float-badge__icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <div>
-            <strong>98% ATS Pass Rate</strong>
-            <span>Verified & Certified</span>
+      <!-- Right Column: Dramatic Monochrome Editorial Image & Mockup -->
+      <div class="hero-visual" data-reveal>
+        <div class="image-frame-wrapper">
+          
+          <!-- Floating $4.99 Price Tag Badge -->
+          <div class="vintage-price-badge">
+            <span class="badge-sub">EXCLUSIVE OFFER</span>
+            <span class="badge-price">$4.99</span>
+            <span class="badge-meta">ONE-TIME FEE</span>
           </div>
-        </div>
 
-        <div class="float-badge float-badge--bottom">
-          <div class="float-badge__icon"><i class="fa-solid fa-clock"></i></div>
-          <div>
-            <strong>24-Hour Delivery</strong>
-            <span>Express & Reliable</span>
-          </div>
-        </div>
-
-        <!-- CV Card Mockup -->
-        <div class="cv-card">
-          <div class="cv-card__sidebar">
-            <div class="cv-card__avatar">
-              <i class="fa-solid fa-user-tie"></i>
+          <!-- Floating ATS Badge -->
+          <div class="float-card float-card-top">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <strong>98% ATS Pass Score</strong>
+              <span>Pre-screened & Tested</span>
             </div>
-            <div class="cv-card__name">Alexander Morgan</div>
-            <div class="cv-card__title">Senior Product Director</div>
-            <div class="cv-card__divider"></div>
-            <div class="cv-card__section-label">CONTACT</div>
-            <div class="cv-card__contact-item"><i class="fa-solid fa-envelope"></i> alex@email.com</div>
-            <div class="cv-card__contact-item"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/alex</div>
-            <div class="cv-card__contact-item"><i class="fa-solid fa-location-dot"></i> New York / Remote</div>
-            <div class="cv-card__divider"></div>
-            <div class="cv-card__section-label">SKILLS</div>
-            <div class="cv-card__tag">ATS Optimisation</div>
-            <div class="cv-card__tag">Growth Strategy</div>
-            <div class="cv-card__tag">Team Leadership</div>
-            <div class="cv-card__tag">Brand Positioning</div>
           </div>
-          <div class="cv-card__main">
-            <div class="cv-card__section-label">PROFESSIONAL SUMMARY</div>
-            <div class="cv-card__line cv-card__line--full"></div>
-            <div class="cv-card__line cv-card__line--75"></div>
-            <div class="cv-card__section-label" style="margin-top:14px">EXPERIENCE</div>
-            <div class="cv-card__job">
-              <div class="cv-card__job-title">Lead Growth Strategist · Global Tech Inc.</div>
-              <div class="cv-card__job-date">2021 — Present</div>
-              <div class="cv-card__bullet"><i class="fa-solid fa-check"></i> Increased organic acquisition by 142% via data-backed search strategies.</div>
-              <div class="cv-card__bullet"><i class="fa-solid fa-check"></i> Managed $180k monthly campaign budget across enterprise pipelines.</div>
+
+          <!-- Floating Turnaround Badge -->
+          <div class="float-card float-card-bottom">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <div>
+              <strong>24-Hour Delivery</strong>
+              <span>Express Turnaround</span>
             </div>
-            <div class="cv-card__job">
-              <div class="cv-card__job-title">Digital Marketing Lead · Apex Media</div>
-              <div class="cv-card__job-date">2018 — 2021</div>
-              <div class="cv-card__bullet"><i class="fa-solid fa-check"></i> Led product launch generating $1.2M in first-year ARR.</div>
+          </div>
+
+          <!-- Generated Monochrome Editorial Hero Image -->
+          <div class="image-container">
+            <img src="assets/hero_cv_mockup.jpg" 
+                 alt="Classical Monochrome Executive Resume on Slate Marble Desk with Fountain Pen" 
+                 class="hero-editorial-img"
+                 loading="eager">
+            <div class="image-inner-border"></div>
+            <div class="image-stamp">
+              <i class="fa-solid fa-stamp"></i> RECRUITER APPROVED · ANNO MMXXVI
             </div>
-            <div class="cv-card__section-label" style="margin-top:14px">EDUCATION</div>
-            <div class="cv-card__job-title" style="font-size:0.78rem">BSc Business & Technology — Honors Graduate</div>
           </div>
-          <div class="cv-card__stamp">
-            <i class="fa-solid fa-stamp"></i> RECRUITER APPROVED
-          </div>
+
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ===================== MARQUEE / PLATFORMS STRIP ===================== -->
-  <div class="marquee-strip">
-    <div class="marquee-strip__track">
-      <span>🌍 Available Worldwide</span>
-      <span class="sep">·</span>
-      <span><i class="fa-solid fa-circle" style="font-size:0.5rem;color:#1dbf73"></i>&nbsp;fi<b>verr</b> — ⭐ 5.0 · 850+ Orders</span>
-      <span class="sep">·</span>
-      <span><b>up</b>work — Top Rated Plus</span>
-      <span class="sep">·</span>
-      <span>freelancer — Preferred Seller</span>
-      <span class="sep">·</span>
-      <span><i class="fa-brands fa-stripe"></i>&nbsp;Secure Stripe Checkout — No Account Needed</span>
-      <span class="sep">·</span>
-      <span><i class="fa-brands fa-whatsapp"></i> Direct WhatsApp Orders Welcome</span>
-      <span class="sep">·</span>
-      <span>🌍 Available Worldwide</span>
-      <span class="sep">·</span>
-      <span><i class="fa-solid fa-circle" style="font-size:0.5rem;color:#1dbf73"></i>&nbsp;fi<b>verr</b> — ⭐ 5.0 · 850+ Orders</span>
-      <span class="sep">·</span>
-      <span><b>up</b>work — Top Rated Plus</span>
-      <span class="sep">·</span>
-      <span>freelancer — Preferred Seller</span>
-      <span class="sep">·</span>
-      <span><i class="fa-brands fa-stripe"></i>&nbsp;Secure Stripe Checkout — No Account Needed</span>
-      <span class="sep">·</span>
-      <span><i class="fa-brands fa-whatsapp"></i> Direct WhatsApp Orders Welcome</span>
+  <!-- Marquee Platforms Strip -->
+  <section class="platforms-ticker">
+    <div class="ticker-content">
+      <span><i class="fa-solid fa-globe"></i> WORLDWIDE SERVICE</span>
+      <span class="ticker-sep">❖</span>
+      <span>fi<b>verr</b> — ⭐ 5.0 RATED (850+ ORDERS)</span>
+      <span class="ticker-sep">❖</span>
+      <span><b>up</b>work — TOP RATED PLUS</span>
+      <span class="ticker-sep">❖</span>
+      <span>freelancer — PREFERRED MASTER</span>
+      <span class="ticker-sep">❖</span>
+      <span><i class="fa-brands fa-stripe"></i> STRIPE VERIFIED CHECKOUT — NO ACCOUNT REQUIRED</span>
+      <span class="ticker-sep">❖</span>
+      <span><i class="fa-brands fa-whatsapp"></i> WHATSAPP: +8801742761220</span>
+      <span class="ticker-sep">❖</span>
+      <span><i class="fa-solid fa-globe"></i> WORLDWIDE SERVICE</span>
+      <span class="ticker-sep">❖</span>
+      <span>fi<b>verr</b> — ⭐ 5.0 RATED (850+ ORDERS)</span>
+      <span class="ticker-sep">❖</span>
+      <span><b>up</b>work — TOP RATED PLUS</span>
+      <span class="ticker-sep">❖</span>
+      <span>freelancer — PREFERRED MASTER</span>
+      <span class="ticker-sep">❖</span>
+      <span><i class="fa-brands fa-stripe"></i> STRIPE VERIFIED CHECKOUT — NO ACCOUNT REQUIRED</span>
+      <span class="ticker-sep">❖</span>
+      <span><i class="fa-brands fa-whatsapp"></i> WHATSAPP: +8801742761220</span>
     </div>
-  </div>
+  </section>
 
-  <!-- ===================== PROBLEM / TRUTH SECTION ===================== -->
-  <section class="section truth-section" id="craft">
+  <!-- Philosophy & The Brutal Truth Section -->
+  <section class="section philosophy-section" id="philosophy">
     <div class="container">
-
-      <div class="section__header" data-reveal>
-        <span class="eyebrow">The Uncomfortable Truth</span>
-        <h2 class="section__title">
-          75% of resumes are discarded before a human ever reads them.
-        </h2>
-        <p class="section__desc">
-          Applicant Tracking Systems filter out the unprepared. Your qualifications are not the issue. Your resume is. We fix that.
+      <div class="section-title-wrap text-center" data-reveal>
+        <span class="eyebrow">THE UNCOMFORTABLE TRUTH</span>
+        <h2 class="section-heading">❌ SENDING APPLICATIONS BUT GETTING ZERO INTERVIEWS?</h2>
+        <div class="monochrome-divider"><span>❖</span></div>
+        <p class="section-sub">
+          Over 75% of resumes are discarded by automated ATS parsers before any human recruiter reads them. Your career credentials are not the problem — your resume’s formatting is.
         </p>
       </div>
 
-      <div class="truth__grid">
-
-        <div class="truth__card truth__card--bad" data-reveal>
-          <div class="truth__card-header">
-            <div class="truth__icon truth__icon--bad"><i class="fa-solid fa-circle-xmark"></i></div>
-            <h3>Typical Resume</h3>
-            <span class="pill pill--bad">Rejected — 0 Calls</span>
-          </div>
-          <ul class="truth__list">
-            <li><i class="fa-solid fa-xmark"></i> Table-based layout that ATS parsers cannot read</li>
-            <li><i class="fa-solid fa-xmark"></i> Generic task lists with zero measurable achievements</li>
-            <li><i class="fa-solid fa-xmark"></i> Cluttered design that fails the 6-second recruiter glance</li>
-            <li><i class="fa-solid fa-xmark"></i> Missing target keywords for the role and industry</li>
-            <li><i class="fa-solid fa-xmark"></i> Lost among 200+ identical, forgettable applications</li>
+      <!-- Comparative Side-by-Side Grid -->
+      <div class="comparison-grid">
+        <!-- Typical Bad CV -->
+        <div class="comparison-card bad-card" data-reveal>
+          <div class="card-status-badge status-bad">THE FAILED STANDARD</div>
+          <div class="card-header-icon"><i class="fa-solid fa-circle-xmark"></i></div>
+          <h3 class="card-title">Typical / Amateur Resume</h3>
+          <p class="card-sub">Rejected automatically by ATS algorithms (0 interview calls)</p>
+          <ul class="comparison-points">
+            <li><i class="fa-solid fa-xmark"></i> Confusing multi-column tables that scramble in ATS databases</li>
+            <li><i class="fa-solid fa-xmark"></i> Generic task descriptions with zero quantifiable business impact</li>
+            <li><i class="fa-solid fa-xmark"></i> Cluttered graphics and colored icons that fail the 6-second glance</li>
+            <li><i class="fa-solid fa-xmark"></i> Missing industry-specific keywords required by automated screeners</li>
+            <li><i class="fa-solid fa-xmark"></i> Lost forever in piles of 300+ overlooked applicants</li>
           </ul>
         </div>
 
-        <div class="truth__divider">
-          <div class="truth__divider-line"></div>
-          <div class="truth__divider-vs">VS</div>
-          <div class="truth__divider-line"></div>
-        </div>
-
-        <div class="truth__card truth__card--good" data-reveal>
-          <div class="truth__card-recommended">RECOMMENDED</div>
-          <div class="truth__card-header">
-            <div class="truth__icon truth__icon--good"><i class="fa-solid fa-circle-check"></i></div>
-            <h3>CareerForge Resume</h3>
-            <span class="pill pill--good">Passes ATS · Lands Interviews</span>
-          </div>
-          <ul class="truth__list">
-            <li><i class="fa-solid fa-check"></i> Clean single-column hierarchy — 100% ATS-parseable</li>
-            <li><i class="fa-solid fa-check"></i> Action-led bullets with quantified ROI ($, %, rankings)</li>
-            <li><i class="fa-solid fa-check"></i> Visually commanding layout built for elite first impressions</li>
-            <li><i class="fa-solid fa-check"></i> Role-tailored keyword injection for your exact target position</li>
-            <li><i class="fa-solid fa-check"></i> Instantly memorable — designed for the 6-second rule</li>
+        <!-- CareerForge Classical CV -->
+        <div class="comparison-card good-card" data-reveal>
+          <div class="card-status-badge status-good">THE CAREERFORGE BENCHMARK</div>
+          <div class="card-header-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="card-title">Our ATS-Engineered Masterpiece</h3>
+          <p class="card-sub">Guaranteed ATS pass rate · Instantly captures recruiter attention</p>
+          <ul class="comparison-points">
+            <li><i class="fa-solid fa-check"></i> 100% parseable single/dual hierarchy tested on Workday & Taleo</li>
+            <li><i class="fa-solid fa-check"></i> High-velocity action verbs coupled with quantifiable metrics ($, %, ROI)</li>
+            <li><i class="fa-solid fa-check"></i> Timeless black & white monochrome typography commanding authority</li>
+            <li><i class="fa-solid fa-check"></i> Strategically injected keywords custom-tailored to your target position</li>
+            <li><i class="fa-solid fa-check"></i> Immediate interview shortlisting within the first 6-second review</li>
           </ul>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ===================== FEATURES ===================== -->
-  <section class="section features-section" id="craft-features">
+  <!-- What You Receive (Features Grid) -->
+  <section class="section features-section" id="services">
     <div class="container">
-      <div class="section__header" data-reveal>
-        <span class="eyebrow">What You Receive</span>
-        <h2 class="section__title">Everything forged to beat the competition.</h2>
+      <div class="section-title-wrap text-center" data-reveal>
+        <span class="eyebrow">UNCOMPROMISING CRAFTSMANSHIP</span>
+        <h2 class="section-heading">SIX PILLARS OF A FLAWLESS EXECUTIVE CV</h2>
+        <div class="monochrome-divider"><span>❖</span></div>
       </div>
 
-      <div class="features__grid">
-        <div class="feature__item" data-reveal>
-          <div class="feature__num">01</div>
-          <div class="feature__icon"><i class="fa-solid fa-robot"></i></div>
-          <h3>ATS-Optimised Format</h3>
-          <p>Keyword density, clean heading hierarchies, and ATS-safe fonts tested across Workday, Taleo, Greenhouse, and iCIMS.</p>
+      <div class="features-grid">
+        <div class="feature-card" data-reveal>
+          <div class="feature-num">01</div>
+          <div class="feature-icon"><i class="fa-solid fa-microchip"></i></div>
+          <h3>ATS-Engineered Architecture</h3>
+          <p>Formatted with standard heading hierarchies, clean margins, and system fonts proven to pass automated applicant tracking systems without error.</p>
         </div>
-        <div class="feature__item" data-reveal>
-          <div class="feature__num">02</div>
-          <div class="feature__icon"><i class="fa-solid fa-pen-nib"></i></div>
-          <h3>Impact-Driven Writing</h3>
-          <p>We transform generic duty lists into powerful achievement narratives — quantified with metrics that resonate with decision-makers.</p>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-num">02</div>
+          <div class="feature-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+          <h3>Persuasive Executive Writing</h3>
+          <p>We transform passive daily chores into high-impact accomplishment narratives that prove your bottom-line value to hiring directors.</p>
         </div>
-        <div class="feature__item" data-reveal>
-          <div class="feature__num">03</div>
-          <div class="feature__icon"><i class="fa-solid fa-palette"></i></div>
-          <h3>Timeless Professional Design</h3>
-          <p>Classic, authority-projecting layouts. Clean whitespace. Typographic hierarchy that commands attention and respect.</p>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-num">03</div>
+          <div class="feature-icon"><i class="fa-solid fa-monument"></i></div>
+          <h3>Timeless Monochrome Design</h3>
+          <p>Rooted in classical editorial aesthetics. High contrast, refined whitespace, and commanding black & white typography that never looks dated.</p>
         </div>
-        <div class="feature__item" data-reveal>
-          <div class="feature__num">04</div>
-          <div class="feature__icon"><i class="fa-solid fa-file-word"></i></div>
-          <h3>Fully Editable Source Files</h3>
-          <p>Receive a perfectly formatted PDF ready to send, plus an editable .docx so you can update it yourself any time.</p>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-num">04</div>
+          <div class="feature-icon"><i class="fa-solid fa-file-pen"></i></div>
+          <h3>Editable Source Files (.DOCX + PDF)</h3>
+          <p>You receive a pristine, print-ready PDF along with an editable Microsoft Word document so you retain total lifetime control of your resume.</p>
         </div>
-        <div class="feature__item" data-reveal>
-          <div class="feature__num">05</div>
-          <div class="feature__icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-          <h3>24-Hour Express Delivery</h3>
-          <p>Applying tomorrow? We deliver your polished, complete resume within 24 hours — always on time, never rushed in quality.</p>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-num">05</div>
+          <div class="feature-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+          <h3>Guaranteed 24-Hour Delivery</h3>
+          <p>Facing a looming application deadline? Your fully optimized resume is delivered directly to your inbox within 24 hours of ordering.</p>
         </div>
-        <div class="feature__item" data-reveal>
-          <div class="feature__num">06</div>
-          <div class="feature__icon"><i class="fa-solid fa-globe"></i></div>
-          <h3>Global Format Standards</h3>
-          <p>Crafted to international recruitment norms — USA, UK, Canada, UAE, Gulf, Europe, South Asia, and Southeast Asia.</p>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-num">06</div>
+          <div class="feature-icon"><i class="fa-solid fa-earth-americas"></i></div>
+          <h3>Global International Standards</h3>
+          <p>Compliant with recruitment norms across the USA, UK, Canada, UAE, Saudi Arabia, Europe, Bangladesh, India, and Southeast Asia.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PROCESS ===================== -->
+  <!-- The 3-Step Process -->
   <section class="section process-section" id="process">
     <div class="container">
-      <div class="section__header" data-reveal>
-        <span class="eyebrow">The Process</span>
-        <h2 class="section__title">Your new CV in three precise steps.</h2>
+      <div class="section-title-wrap text-center" data-reveal>
+        <span class="eyebrow">THE PROTOCOL</span>
+        <h2 class="section-heading">HOW TO RECEIVE YOUR MASTERPIECE IN 3 STEPS</h2>
+        <div class="monochrome-divider"><span>❖</span></div>
       </div>
 
-      <div class="process__track">
-        <div class="process__step" data-reveal>
-          <div class="process__num">I</div>
-          <div class="process__body">
-            <div class="process__icon"><i class="fa-solid fa-credit-card"></i></div>
-            <h3>Select & Secure Your Order</h3>
-            <p>Choose your package. Pay in 60 seconds via secure Stripe checkout — Visa, Mastercard, Apple Pay, Google Pay. No account required.</p>
-          </div>
+      <div class="steps-row">
+        <div class="step-box" data-reveal>
+          <div class="step-roman">I</div>
+          <div class="step-icon"><i class="fa-solid fa-credit-card"></i></div>
+          <h3>Select Package & Order</h3>
+          <p>Pay securely via Stripe ($4.99) or message us instantly on WhatsApp. No account registration needed.</p>
         </div>
 
-        <div class="process__connector"></div>
-
-        <div class="process__step" data-reveal>
-          <div class="process__num">II</div>
-          <div class="process__body">
-            <div class="process__icon"><i class="fa-solid fa-file-arrow-up"></i></div>
-            <h3>Share Your Details</h3>
-            <p>Send your existing CV, LinkedIn, or a brief career summary along with your target role and industry via WhatsApp or email.</p>
-          </div>
+        <div class="step-box" data-reveal>
+          <div class="step-roman">II</div>
+          <div class="step-icon"><i class="fa-solid fa-file-arrow-up"></i></div>
+          <h3>Send Your Career Details</h3>
+          <p>Send your existing CV, LinkedIn URL, or rough career notes via WhatsApp or email alongside your target role.</p>
         </div>
 
-        <div class="process__connector"></div>
-
-        <div class="process__step" data-reveal>
-          <div class="process__num">III</div>
-          <div class="process__body">
-            <div class="process__icon"><i class="fa-solid fa-award"></i></div>
-            <h3>Receive Your Masterpiece</h3>
-            <p>Within 24 hours, your professionally written, ATS-certified resume lands in your inbox — PDF + editable Word, ready for the world.</p>
-          </div>
+        <div class="step-box" data-reveal>
+          <div class="step-roman">III</div>
+          <div class="step-icon"><i class="fa-solid fa-award"></i></div>
+          <h3>Receive & Conquer</h3>
+          <p>Within 24 hours, receive your ATS-certified PDF and editable Word source files ready for instant submission.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PRICING ===================== -->
+  <!-- Complete Pricing & Upsell Suite -->
   <section class="section pricing-section" id="pricing">
     <div class="container">
-      <div class="section__header" data-reveal>
-        <span class="eyebrow">Packages & Pricing</span>
-        <h2 class="section__title">Transparent. Exceptional. Worth every cent.</h2>
-        <p class="section__desc">
-          All packages include secure payment via <strong>Stripe</strong> (Visa, Mastercard, Apple Pay, Google Pay) or direct WhatsApp order.
+      <div class="section-title-wrap text-center" data-reveal>
+        <span class="eyebrow">TRANSPARENT VALUE</span>
+        <h2 class="section-heading">SELECT YOUR TIER & START TODAY</h2>
+        <div class="monochrome-divider"><span>❖</span></div>
+        <p class="section-sub">
+          Instant Stripe card checkout or direct ordering via WhatsApp (+8801742761220).
         </p>
       </div>
 
-      <div class="pricing__grid">
+      <!-- 5-Tier Pricing Grid -->
+      <div class="pricing-grid">
 
-        <!-- ── BASIC $4.99 ── -->
-        <div class="pricing__card" data-reveal>
-          <div class="pricing__tier">Starter</div>
-          <h3 class="pricing__name">Basic CV Package</h3>
-          <p class="pricing__desc">Perfect for fresh graduates or a swift, clean update.</p>
-          <div class="pricing__price">
-            <span class="pricing__currency">$</span>
-            <span class="pricing__amount">4.99</span>
-            <span class="pricing__period">/ one-time</span>
+        <!-- Package 1: Basic CV $4.99 -->
+        <div class="pricing-card" data-reveal>
+          <div class="tier-badge">ENTRY TIER</div>
+          <h3 class="tier-title">Basic CV Package</h3>
+          <p class="tier-desc">Ideal for students, fresh graduates, or quick CV revitalization.</p>
+          <div class="price-box">
+            <span class="price-currency">$</span>
+            <span class="price-val">4.99</span>
+            <span class="price-meta">one-time</span>
           </div>
-          <ul class="pricing__perks">
-            <li><i class="fa-solid fa-check"></i> 1-Page ATS-Optimised Resume</li>
-            <li><i class="fa-solid fa-check"></i> Modern Professional Design</li>
+
+          <ul class="tier-perks">
+            <li><i class="fa-solid fa-check"></i> 1-Page ATS-Optimized Resume</li>
+            <li><i class="fa-solid fa-check"></i> Timeless Monochrome Design</li>
             <li><i class="fa-solid fa-check"></i> PDF + Editable Word (.docx)</li>
-            <li><i class="fa-solid fa-check"></i> Standard 48-Hour Delivery</li>
-            <li class="muted"><i class="fa-solid fa-minus"></i> Cover Letter</li>
-            <li class="muted"><i class="fa-solid fa-minus"></i> LinkedIn Revamp</li>
+            <li><i class="fa-solid fa-check"></i> Standard 48h Turnaround</li>
+            <li class="disabled"><i class="fa-solid fa-minus"></i> Cover Letter</li>
+            <li class="disabled"><i class="fa-solid fa-minus"></i> LinkedIn Profile Revamp</li>
           </ul>
-          <!-- REAL STRIPE PAYMENT LINK FOR $4.99 -->
-          <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600"
-             target="_blank"
-             class="btn btn--gold btn--block">
-            <i class="fa-solid fa-lock"></i> Order Now — $4.99
-          </a>
-          <a href="https://wa.me/1234567890?text=Hi%21%20I%20want%20to%20order%20the%20Basic%20CV%20Package%20(%244.99)."
-             target="_blank" class="btn btn--wa btn--block">
-            <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
-          </a>
+
+          <div class="tier-actions">
+            <!-- Directly Linked to the User's Provided Stripe Link -->
+            <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" 
+               target="_blank" 
+               class="btn btn-white btn-block">
+              <i class="fa-solid fa-lock"></i> ORDER NOW — $4.99
+            </a>
+            <a href="https://wa.me/8801742761220?text=Hi%21%20I%20want%20to%20order%20the%20Basic%20CV%20Package%20($4.99)." 
+               target="_blank" 
+               class="btn btn-wa btn-block">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Order
+            </a>
+          </div>
         </div>
 
-        <!-- ── PROFESSIONAL $9.99 (POPULAR) ── -->
-        <div class="pricing__card pricing__card--featured" data-reveal>
-          <div class="pricing__ribbon">Most Popular</div>
-          <div class="pricing__tier">Career Accelerator</div>
-          <h3 class="pricing__name">Professional CV</h3>
-          <p class="pricing__desc">For experienced pros pivoting roles or aiming for a pay rise.</p>
-          <div class="pricing__price">
-            <span class="pricing__currency">$</span>
-            <span class="pricing__amount">9.99</span>
-            <span class="pricing__period">/ one-time</span>
+        <!-- Package 2: Professional CV $9.99 (Popular) -->
+        <div class="pricing-card popular-card" data-reveal>
+          <div class="popular-ribbon">MOST POPULAR</div>
+          <div class="tier-badge">CAREER ACCELERATOR</div>
+          <h3 class="tier-title">Professional CV</h3>
+          <p class="tier-desc">For experienced pros looking to change companies or earn a promotion.</p>
+          <div class="price-box">
+            <span class="price-currency">$</span>
+            <span class="price-val">9.99</span>
+            <span class="price-meta">one-time</span>
           </div>
-          <ul class="pricing__perks">
-            <li><i class="fa-solid fa-check"></i> 1–2 Page Full ATS Optimisation</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Complete Content Rewrite</strong></li>
-            <li><i class="fa-solid fa-check"></i> Targeted Keyword Research</li>
-            <li><i class="fa-solid fa-check"></i> Quantified Impact Bullets</li>
+
+          <ul class="tier-perks">
+            <li><i class="fa-solid fa-check"></i> 1-2 Page Full ATS Optimization</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Complete Content Rewrite & Polish</strong></li>
+            <li><i class="fa-solid fa-check"></i> Keyword Research for Target Role</li>
+            <li><i class="fa-solid fa-check"></i> Quantified Achievement Bullets</li>
             <li><i class="fa-solid fa-check"></i> PDF + Editable Word (.docx)</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Priority 24-Hour Delivery</strong></li>
-            <li><i class="fa-solid fa-check"></i> 2 Free Revision Rounds</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Priority 24-Hour Express Delivery</strong></li>
+            <li><i class="fa-solid fa-check"></i> 2 Free Revision Cycles</li>
           </ul>
-          <a href="https://wa.me/1234567890?text=Hi%21%20I%20want%20to%20order%20the%20Professional%20CV%20Package%20(%249.99)."
-             target="_blank"
-             class="btn btn--gold btn--block">
-            <i class="fa-solid fa-bolt"></i> Order Now — $9.99
-          </a>
-          <a href="https://wa.me/1234567890?text=Hi%21%20I%20want%20to%20order%20the%20Professional%20CV%20Package%20(%249.99)."
-             target="_blank" class="btn btn--wa btn--block">
-            <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
-          </a>
+
+          <div class="tier-actions">
+            <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" 
+               target="_blank" 
+               class="btn btn-white btn-block">
+              <i class="fa-solid fa-bolt"></i> ORDER PRO — $9.99
+            </a>
+            <a href="https://wa.me/8801742761220?text=Hi%21%20I%20want%20to%20order%20the%20Professional%20CV%20Package%20($9.99)." 
+               target="_blank" 
+               class="btn btn-wa btn-block">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Order
+            </a>
+          </div>
         </div>
 
-        <!-- ── CV + COVER LETTER $14.99 ── -->
-        <div class="pricing__card" data-reveal>
-          <div class="pricing__tier">Job-Winner</div>
-          <h3 class="pricing__name">CV + Cover Letter</h3>
-          <p class="pricing__desc">Complete the picture with a bespoke, persuasive cover letter.</p>
-          <div class="pricing__price">
-            <span class="pricing__currency">$</span>
-            <span class="pricing__amount">14.99</span>
-            <span class="pricing__period">/ one-time</span>
+        <!-- Package 3: CV + Cover Letter $14.99 -->
+        <div class="pricing-card" data-reveal>
+          <div class="tier-badge">JOB-WINNER</div>
+          <h3 class="tier-title">CV + Cover Letter</h3>
+          <p class="tier-desc">Stand out from other candidates with a tailored, persuasive cover letter.</p>
+          <div class="price-box">
+            <span class="price-currency">$</span>
+            <span class="price-val">14.99</span>
+            <span class="price-meta">one-time</span>
           </div>
-          <ul class="pricing__perks">
-            <li><i class="fa-solid fa-check"></i> Full Professional CV</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Custom Cover Letter</strong></li>
-            <li><i class="fa-solid fa-check"></i> Narrative Storytelling Approach</li>
-            <li><i class="fa-solid fa-check"></i> PDF + Editable Word (.docx)</li>
-            <li><i class="fa-solid fa-check"></i> 24-Hour Express Delivery</li>
+
+          <ul class="tier-perks">
+            <li><i class="fa-solid fa-check"></i> Full Professional CV Package</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Custom Targeted Cover Letter</strong></li>
+            <li><i class="fa-solid fa-check"></i> Persuasive Executive Narrative</li>
+            <li><i class="fa-solid fa-check"></i> Editable Word + PDF Files</li>
+            <li><i class="fa-solid fa-check"></i> 24-Hour Express Turnaround</li>
             <li><i class="fa-solid fa-check"></i> Unlimited Revisions</li>
           </ul>
-          <a href="https://wa.me/1234567890?text=Hi%21%20I%20want%20to%20order%20the%20CV%20%2B%20Cover%20Letter%20Package%20(%2414.99)."
-             target="_blank"
-             class="btn btn--gold btn--block">
-            <i class="fa-solid fa-lock"></i> Order Now — $14.99
-          </a>
-          <a href="https://wa.me/1234567890?text=Hi%21%20I%20want%20to%20order%20the%20CV%20%2B%20Cover%20Letter%20Package%20(%2414.99)."
-             target="_blank" class="btn btn--wa btn--block">
-            <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
-          </a>
+
+          <div class="tier-actions">
+            <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" 
+               target="_blank" 
+               class="btn btn-white btn-block">
+              <i class="fa-solid fa-lock"></i> ORDER NOW — $14.99
+            </a>
+            <a href="https://wa.me/8801742761220?text=Hi%21%20I%20want%20to%20order%20the%20CV%20+%20Cover%20Letter%20Package%20($14.99)." 
+               target="_blank" 
+               class="btn btn-wa btn-block">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Order
+            </a>
+          </div>
         </div>
 
-        <!-- ── CV + LINKEDIN $19.99 ── -->
-        <div class="pricing__card" data-reveal>
-          <div class="pricing__tier">Digital Brand</div>
-          <h3 class="pricing__name">CV + LinkedIn Revamp</h3>
-          <p class="pricing__desc">Let recruiters find you. Full LinkedIn profile optimisation included.</p>
-          <div class="pricing__price">
-            <span class="pricing__currency">$</span>
-            <span class="pricing__amount">19.99</span>
-            <span class="pricing__period">/ one-time</span>
+        <!-- Package 4: CV + LinkedIn Revamp $19.99 -->
+        <div class="pricing-card" data-reveal>
+          <div class="tier-badge">DIGITAL BRAND</div>
+          <h3 class="tier-title">CV + LinkedIn Revamp</h3>
+          <p class="tier-desc">Command recruiter attention both in their inbox and on LinkedIn search.</p>
+          <div class="price-box">
+            <span class="price-currency">$</span>
+            <span class="price-val">19.99</span>
+            <span class="price-meta">one-time</span>
           </div>
-          <ul class="pricing__perks">
-            <li><i class="fa-solid fa-check"></i> Full Professional CV (ATS)</li>
-            <li><i class="fa-solid fa-check"></i> <strong>LinkedIn Headline & Bio</strong></li>
-            <li><i class="fa-solid fa-check"></i> Search Keyword Optimisation</li>
-            <li><i class="fa-solid fa-check"></i> Outreach Message Templates</li>
-            <li><i class="fa-solid fa-check"></i> PDF + Word + Text Guide</li>
-            <li><i class="fa-solid fa-check"></i> Recruiter Profile Consultation</li>
+
+          <ul class="tier-perks">
+            <li><i class="fa-solid fa-check"></i> Full Professional ATS CV</li>
+            <li><i class="fa-solid fa-check"></i> <strong>LinkedIn Headline & Bio Overhaul</strong></li>
+            <li><i class="fa-solid fa-check"></i> SEO Keyword Optimization</li>
+            <li><i class="fa-solid fa-check"></i> Recruiter Outreach Scripts</li>
+            <li><i class="fa-solid fa-check"></i> PDF + Word + Text Guides</li>
+            <li><i class="fa-solid fa-check"></i> Profile Optimization Strategy</li>
           </ul>
-          <a href="https://wa.me/1234567890?text=Hi%21%20I%20want%20to%20order%20the%20CV%20%2B%20LinkedIn%20Package%20(%2419.99)."
-             target="_blank"
-             class="btn btn--gold btn--block">
-            <i class="fa-solid fa-lock"></i> Order Now — $19.99
-          </a>
-          <a href="https://wa.me/1234567890?text=Hi%21%20I%20want%20to%20order%20the%20CV%20%2B%20LinkedIn%20Package%20(%2419.99)."
-             target="_blank" class="btn btn--wa btn--block">
-            <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
-          </a>
+
+          <div class="tier-actions">
+            <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" 
+               target="_blank" 
+               class="btn btn-white btn-block">
+              <i class="fa-solid fa-lock"></i> ORDER NOW — $19.99
+            </a>
+            <a href="https://wa.me/8801742761220?text=Hi%21%20I%20want%20to%20order%20the%20CV%20+%20LinkedIn%20Package%20($19.99)." 
+               target="_blank" 
+               class="btn btn-wa btn-block">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Order
+            </a>
+          </div>
         </div>
 
-        <!-- ── COMPLETE BUNDLE $24.99 (BEST VALUE) ── -->
-        <div class="pricing__card pricing__card--elite" data-reveal>
-          <div class="pricing__ribbon pricing__ribbon--gold">Best Value</div>
-          <div class="pricing__tier">The Complete Suite</div>
-          <h3 class="pricing__name">Complete Job Package</h3>
-          <p class="pricing__desc">Everything required to land the interview — and ace the offer.</p>
-          <div class="pricing__price">
-            <span class="pricing__currency">$</span>
-            <span class="pricing__amount">24.99</span>
-            <span class="pricing__period">/ one-time</span>
+        <!-- Package 5: Complete Job Package $24.99 (Best Value) -->
+        <div class="pricing-card elite-card" data-reveal>
+          <div class="popular-ribbon elite-ribbon">BEST VALUE</div>
+          <div class="tier-badge">THE COMPLETE SUITE</div>
+          <h3 class="tier-title">Complete Job Suite</h3>
+          <p class="tier-desc">Everything needed to land the interview and conquer salary negotiations.</p>
+          <div class="price-box">
+            <span class="price-currency">$</span>
+            <span class="price-val">24.99</span>
+            <span class="price-meta">one-time</span>
           </div>
-          <ul class="pricing__perks">
-            <li><i class="fa-solid fa-check"></i> <strong>ATS Professional CV</strong></li>
-            <li><i class="fa-solid fa-check"></i> <strong>Custom Cover Letter</strong></li>
-            <li><i class="fa-solid fa-check"></i> <strong>Full LinkedIn Optimisation</strong></li>
-            <li><i class="fa-solid fa-check"></i> <strong>50+ Interview Q&A Guide</strong></li>
-            <li><i class="fa-solid fa-check"></i> PDF + Word + All Source Files</li>
+
+          <ul class="tier-perks">
+            <li><i class="fa-solid fa-check"></i> <strong>ATS-Engineered Professional CV</strong></li>
+            <li><i class="fa-solid fa-check"></i> <strong>Targeted Custom Cover Letter</strong></li>
+            <li><i class="fa-solid fa-check"></i> <strong>Full LinkedIn Profile Overhaul</strong></li>
+            <li><i class="fa-solid fa-check"></i> <strong>50+ Tough Interview Q&A Guide</strong></li>
+            <li><i class="fa-solid fa-check"></i> Editable Word + Print PDF Source Files</li>
             <li><i class="fa-solid fa-check"></i> VIP Priority 24-Hour Delivery</li>
             <li><i class="fa-solid fa-check"></i> 100% Satisfaction Guarantee</li>
           </ul>
-          <a href="https://wa.me/1234567890?text=Hi%21%20I%20want%20to%20order%20the%20Complete%20Job%20Package%20(%2424.99)."
-             target="_blank"
-             class="btn btn--gold btn--block">
-            <i class="fa-solid fa-trophy"></i> Order Now — $24.99
-          </a>
-          <a href="https://wa.me/1234567890?text=Hi%21%20I%20want%20to%20order%20the%20Complete%20Job%20Package%20(%2424.99)."
-             target="_blank" class="btn btn--wa btn--block">
-            <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
-          </a>
+
+          <div class="tier-actions">
+            <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" 
+               target="_blank" 
+               class="btn btn-white btn-block">
+              <i class="fa-solid fa-trophy"></i> GET BUNDLE — $24.99
+            </a>
+            <a href="https://wa.me/8801742761220?text=Hi%21%20I%20want%20to%20order%20the%20Complete%20Job%20Package%20($24.99)." 
+               target="_blank" 
+               class="btn btn-wa btn-block">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Order
+            </a>
+          </div>
         </div>
 
       </div>
 
-      <!-- Payment Security Bar -->
-      <div class="payment-bar" data-reveal>
-        <div class="payment-bar__left">
+      <!-- Payment Security Note -->
+      <div class="security-banner" data-reveal>
+        <div class="security-info">
           <i class="fa-solid fa-shield-halved"></i>
           <div>
-            <strong>Secure Checkout Powered by Stripe</strong>
-            <span>256-bit SSL encryption. No account needed. Instant payment confirmation.</span>
+            <strong>100% SECURE ENCRYPTED CHECKOUT VIA STRIPE</strong>
+            <p>Pay with Visa, Mastercard, Apple Pay, Google Pay, or Amex. No account creation required.</p>
           </div>
         </div>
-        <div class="payment-bar__icons">
+        <div class="security-icons">
           <i class="fa-brands fa-cc-visa"></i>
           <i class="fa-brands fa-cc-mastercard"></i>
           <i class="fa-brands fa-cc-amex"></i>
@@ -558,51 +583,54 @@
     </div>
   </section>
 
-  <!-- ===================== SOCIAL PROOF / TESTIMONIALS ===================== -->
+  <!-- Worldwide Proof & Testimonials -->
   <section class="section proof-section" id="proof">
     <div class="container">
-      <div class="section__header" data-reveal>
-        <span class="eyebrow">Client Stories</span>
-        <h2 class="section__title">Trusted by job seekers across every continent.</h2>
-        <p class="section__desc">Bangladesh, India, Pakistan, UAE, Nigeria, Philippines, Kenya, USA, UK — our work speaks for itself.</p>
+      <div class="section-title-wrap text-center" data-reveal>
+        <span class="eyebrow">GLOBAL PLACEMENTS</span>
+        <h2 class="section-heading">TRUSTED BY CANDIDATES ACROSS 45+ COUNTRIES</h2>
+        <div class="monochrome-divider"><span>❖</span></div>
+        <p class="section-sub">
+          Bangladesh · India · Pakistan · UAE · Nigeria · Philippines · Kenya · UK · USA
+        </p>
       </div>
 
-      <div class="proof__grid">
-        <div class="proof__card" data-reveal>
-          <div class="proof__stars">★★★★★</div>
-          <blockquote class="proof__quote">
-            "I applied for months in Dubai with zero response. After ordering the $9.99 package, I received three interview calls in the first week. The quality is extraordinary for the price."
-          </blockquote>
-          <div class="proof__author">
-            <div class="proof__initials">RA</div>
+      <div class="testimonials-grid">
+        <div class="testimonial-box" data-reveal>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "I had been applying in Dubai for over four months with zero calls. After ordering the $9.99 package, I secured 3 executive interviews within 10 days. The monochrome layout looks exceptionally authoritative."
+          </p>
+          <div class="testi-author">
+            <div class="author-monogram">RA</div>
             <div>
               <strong>Rashed Ahmed</strong>
-              <span>Project Manager · Dubai, UAE</span>
+              <span>Senior Project Manager · Dubai, UAE</span>
             </div>
           </div>
         </div>
 
-        <div class="proof__card" data-reveal>
-          <div class="proof__stars">★★★★★</div>
-          <blockquote class="proof__quote">
-            "For $4.99 this is utterly insane value. My old CV was embarrassing. The new layout is immaculate — passed ATS with a 97-score and landed me a software engineering role within two weeks."
-          </blockquote>
-          <div class="proof__author">
-            <div class="proof__initials">PK</div>
+        <div class="testimonial-box" data-reveal>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "For $4.99 this is genuinely unbelievable value. My old resume was cluttered and failed every ATS scanner. The new version passed with a 97% score and landed me a Senior Frontend role in Bangalore."
+          </p>
+          <div class="testi-author">
+            <div class="author-monogram">PK</div>
             <div>
               <strong>Priya Krishnamurthy</strong>
-              <span>Frontend Engineer · Bangalore, India</span>
+              <span>Senior Software Engineer · Bangalore, India</span>
             </div>
           </div>
         </div>
 
-        <div class="proof__card" data-reveal>
-          <div class="proof__stars">★★★★★</div>
-          <blockquote class="proof__quote">
-            "The Complete Package was the finest career investment I have made. Delivered in under 20 hours. The LinkedIn revamp alone brought four recruiter messages in 48 hours."
-          </blockquote>
-          <div class="proof__author">
-            <div class="proof__initials">TO</div>
+        <div class="testimonial-box" data-reveal>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "The Complete Job Package was the sharpest career investment I have ever made. Delivered within 20 hours. The communication on WhatsApp was instantaneous and the output is flawless."
+          </p>
+          <div class="testi-author">
+            <div class="author-monogram">TO</div>
             <div>
               <strong>Tunde Olamide</strong>
               <span>Financial Analyst · Lagos, Nigeria</span>
@@ -611,182 +639,189 @@
         </div>
       </div>
 
-      <!-- Stats Row -->
-      <div class="stats__row" data-reveal>
-        <div class="stat">
-          <span class="stat__number">2,500<span class="stat__plus">+</span></span>
-          <span class="stat__label">Resumes Delivered</span>
+      <!-- Stats Numbers Row -->
+      <div class="stats-row" data-reveal>
+        <div class="stat-unit">
+          <span class="stat-digits">2,500<span class="stat-plus">+</span></span>
+          <span class="stat-caption">Resumes Delivered</span>
         </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__number">98<span class="stat__pct">%</span></span>
-          <span class="stat__label">ATS Pass Rate</span>
+        <div class="stat-sep"></div>
+        <div class="stat-unit">
+          <span class="stat-digits">98<span class="stat-plus">%</span></span>
+          <span class="stat-caption">ATS Verification Rate</span>
         </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__number">4.9<span class="stat__star">★</span></span>
-          <span class="stat__label">Average Rating</span>
+        <div class="stat-sep"></div>
+        <div class="stat-unit">
+          <span class="stat-digits">4.9<span class="stat-plus">★</span></span>
+          <span class="stat-caption">Client Rating</span>
         </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__number">24<span class="stat__unit">h</span></span>
-          <span class="stat__label">Delivery Time</span>
+        <div class="stat-sep"></div>
+        <div class="stat-unit">
+          <span class="stat-digits">24<span class="stat-plus">h</span></span>
+          <span class="stat-caption">Delivery Guarantee</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== FAQ ===================== -->
+  <!-- FAQ Accordion -->
   <section class="section faq-section" id="faq">
-    <div class="container faq-section__inner">
-
-      <div class="section__header" data-reveal>
-        <span class="eyebrow">Have Questions?</span>
-        <h2 class="section__title">Frequently asked questions.</h2>
+    <div class="container faq-container">
+      <div class="section-title-wrap text-center" data-reveal>
+        <span class="eyebrow">COMMON INQUIRIES</span>
+        <h2 class="section-heading">FREQUENTLY ASKED QUESTIONS</h2>
+        <div class="monochrome-divider"><span>❖</span></div>
       </div>
 
       <div class="accordion" data-reveal>
-
         <div class="accordion__item">
           <button class="accordion__header">
-            <span>Can I pay with Stripe without a backend server?</span>
+            <span>Can I pay with Stripe without needing a backend server?</span>
             <i class="fa-solid fa-plus accordion__icon"></i>
           </button>
           <div class="accordion__body">
-            <p><strong>Yes — entirely.</strong> This site uses <em>Stripe Payment Links</em>, which means Stripe hosts the entire checkout experience on their PCI-compliant servers. No server-side code, no database, no backend required — we simply paste a Stripe-generated URL into the Order button. You pay securely with Visa, Mastercard, Apple Pay, or Google Pay and are redirected immediately after.</p>
+            <p><strong>Yes, 100%!</strong> We utilize <em>Stripe Payment Links</em>. Stripe hosts the entire secure payment checkout page on their PCI-compliant servers. You do not need any backend server, database, or API management. When a client clicks the order button, they are taken directly to Stripe's checkout page and can pay with any credit card, Apple Pay, or Google Pay.</p>
           </div>
         </div>
 
         <div class="accordion__item">
           <button class="accordion__header">
-            <span>What happens immediately after I pay?</span>
+            <span>How do I send my current CV and information after paying?</span>
             <i class="fa-solid fa-plus accordion__icon"></i>
           </button>
           <div class="accordion__body">
-            <p>Stripe confirms your payment and redirects you to our brief questionnaire (or WhatsApp chat), where you can share your existing CV, career notes, and target role. We begin work immediately and deliver within 24 hours.</p>
+            <p>Once you complete your payment on Stripe, you can instantly message our team directly on WhatsApp (+8801742761220) or email your current CV and target job title. We immediately initiate writing and deliver within 24 hours.</p>
           </div>
         </div>
 
         <div class="accordion__item">
           <button class="accordion__header">
-            <span>What exactly is an ATS and why does it matter so much?</span>
+            <span>Why is the Black & White monochrome layout superior for ATS?</span>
             <i class="fa-solid fa-plus accordion__icon"></i>
           </button>
           <div class="accordion__body">
-            <p>An <em>Applicant Tracking System (ATS)</em> is software used by over 98% of Fortune 500 companies to automatically filter incoming applications before any human reads them. Resumes with complex tables, graphics, non-standard fonts, or missing keywords are instantly rejected. Our resumes are engineered to pass every major ATS while still looking exceptional to human reviewers.</p>
+            <p>Modern Applicant Tracking Systems (ATS) like Workday, Taleo, and Greenhouse parse plain text hierarchies. Colorful graphics, icons, and non-standard tables often break the text parser, resulting in zero interview calls. High-contrast monochrome formatting ensures 100% parser fidelity while delivering a timeless, executive presence to human readers.</p>
           </div>
         </div>
 
         <div class="accordion__item">
           <button class="accordion__header">
-            <span>Can I edit the resume myself later?</span>
+            <span>Can I edit the CV myself later?</span>
             <i class="fa-solid fa-plus accordion__icon"></i>
           </button>
           <div class="accordion__body">
-            <p>Absolutely. Every order includes a print-ready PDF and a fully editable Microsoft Word (.docx) file — so you can update skills, dates, or experience at any time in the future.</p>
+            <p>Yes. Every order comes with both a print-ready PDF and a fully editable Microsoft Word (.docx) file so you can update dates, certifications, and skills whenever you need.</p>
           </div>
         </div>
 
         <div class="accordion__item">
           <button class="accordion__header">
-            <span>Do you offer revisions if I want changes?</span>
+            <span>Can I order directly on WhatsApp or freelance platforms?</span>
             <i class="fa-solid fa-plus accordion__icon"></i>
           </button>
           <div class="accordion__body">
-            <p>Yes. The Basic package includes one free revision round. Professional includes two, and the higher-tier packages include unlimited revisions until you are completely satisfied.</p>
+            <p>Yes. You can contact us directly at <strong>+8801742761220</strong> on WhatsApp or order through our verified profiles on Fiverr, Upwork, and Freelancer.</p>
           </div>
         </div>
-
-        <div class="accordion__item">
-          <button class="accordion__header">
-            <span>Can I order via Fiverr, Upwork, or WhatsApp instead?</span>
-            <i class="fa-solid fa-plus accordion__icon"></i>
-          </button>
-          <div class="accordion__body">
-            <p>Certainly. Every order button has a WhatsApp fallback for direct ordering. Our Fiverr and Upwork profiles offer full buyer protection if you prefer a platform-mediated transaction.</p>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ===================== FINAL CTA ===================== -->
-  <section class="cta-section">
-    <div class="cta-section__bg"></div>
-    <div class="container cta-section__inner" data-reveal>
-      <span class="eyebrow eyebrow--light">Your Next Chapter Starts Here</span>
-      <h2 class="cta-section__title">
-        Stop waiting. Start landing interviews.
-      </h2>
-      <p class="cta-section__sub">
-        A professionally crafted resume is the single highest-return career investment you will ever make. Starting at just $4.99.
+  <!-- Final Call to Action -->
+  <section class="section cta-final">
+    <div class="container text-center" data-reveal>
+      <span class="eyebrow">YOUR DESTINY AWAITS</span>
+      <h2 class="cta-heading">STOP APPLYING INTO THE VOID.<br>LAND INTERVIEWS TODAY.</h2>
+      <p class="cta-sub">
+        An executive, ATS-approved CV is the highest-ROI investment of your professional life. Starting at just $4.99.
       </p>
-      <div class="cta-section__actions">
-        <!-- Real Stripe link wired here too -->
-        <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600"
-           target="_blank"
-           class="btn btn--gold btn--lg pulse">
-          <i class="fa-solid fa-bolt"></i> Order Your CV — $4.99
+
+      <div class="cta-actions">
+        <!-- Direct Stripe Payment for $4.99 -->
+        <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" 
+           target="_blank" 
+           class="btn btn-white btn-lg pulse-glow">
+          <i class="fa-solid fa-bolt"></i> CLAIM YOUR CV TODAY — $4.99
         </a>
-        <a href="https://wa.me/1234567890?text=Hi%21%20I%27d%20like%20to%20know%20more%20about%20your%20CV%20service." target="_blank" class="btn btn--outline-light btn--lg">
-          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        <a href="https://wa.me/8801742761220?text=Hi%21%20I%20am%20ready%20to%20order%20the%20$4.99%20CV%20service." 
+           target="_blank" 
+           class="btn btn-outline-white btn-lg">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (+8801742761220)
         </a>
       </div>
-      <p class="cta-section__note">
-        <i class="fa-solid fa-shield-halved"></i> 100% Satisfaction Guarantee &nbsp;·&nbsp; 24-Hour Delivery &nbsp;·&nbsp; Editable Files Included
+
+      <p class="cta-guarantee">
+        <i class="fa-solid fa-shield-halved"></i> 100% Satisfaction Guarantee · 24-Hour Express Turnaround · Editable Files
       </p>
     </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <a href="#" class="nav__brand">
-          <div class="nav__brand-mark">
-            <i class="fa-solid fa-crown"></i>
+    <div class="container footer-grid">
+      <div class="footer-col-brand">
+        <a href="#" class="brand-logo">
+          <img src="assets/brand_crest_emblem.jpg" alt="CareerForge Crest" class="brand-crest">
+          <div class="brand-text">
+            <span class="brand-title">CAREERFORGE</span>
+            <span class="brand-tagline">ANNO MMXXVI</span>
           </div>
-          <span>Career<em>Forge</em></span>
         </a>
-        <p>Empowering ambitious professionals worldwide with resumes engineered to open doors, accelerate careers, and command the salaries they deserve.</p>
-        <div class="footer__social">
-          <a href="https://fiverr.com" target="_blank" title="Fiverr"><i class="fa-solid fa-circle" style="font-size:0.6rem"></i></a>
+        <p class="footer-bio">
+          Crafting elite, ATS-certified resumes built with timeless black & white authority. Helping ambitious candidates break through algorithmic filters and land six-figure interviews.
+        </p>
+        <div class="footer-socials">
+          <a href="https://wa.me/8801742761220" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://fiverr.com" target="_blank" title="Fiverr"><i class="fa-solid fa-circle"></i></a>
           <a href="https://upwork.com" target="_blank" title="Upwork"><i class="fa-solid fa-briefcase"></i></a>
           <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://wa.me/1234567890" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
 
-      <div class="footer__col">
-        <h4>Navigate</h4>
-        <a href="#craft">The Craft</a>
-        <a href="#process">The Process</a>
-        <a href="#pricing">Packages</a>
-        <a href="#proof">Client Stories</a>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#philosophy">The Standard</a>
+        <a href="#services">What You Receive</a>
+        <a href="#process">The Protocol</a>
+        <a href="#pricing">Packages & Pricing</a>
+        <a href="#proof">Global Testimonials</a>
         <a href="#faq">FAQ</a>
       </div>
 
-      <div class="footer__col">
-        <h4>Contact</h4>
-        <a href="https://wa.me/1234567890" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a>
-        <a href="mailto:support@careerforge.com"><i class="fa-solid fa-envelope"></i> support@careerforge.com</a>
-        <a href="https://fiverr.com" target="_blank"><i class="fa-solid fa-store"></i> Fiverr Profile</a>
-        <a href="https://upwork.com" target="_blank"><i class="fa-solid fa-laptop-code"></i> Upwork Profile</a>
+      <div class="footer-col">
+        <h4>Direct Contact</h4>
+        <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/8801742761220" target="_blank" class="text-white">+880 1742-761220</a></p>
+        <p><i class="fa-solid fa-envelope"></i> Email: support@careerforgecv.com</p>
+        <p><i class="fa-solid fa-shield-halved"></i> Worldwide 24/7 Order Support</p>
+        <p><i class="fa-solid fa-clock"></i> Express Delivery: &le; 24 Hours</p>
       </div>
     </div>
 
-    <div class="footer__bottom">
-      <div class="container footer__bottom-inner">
-        <span>&copy; 2026 CareerForge. All rights reserved.</span>
-        <span>Built for job seekers across every continent.</span>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>&copy; 2026 CareerForge International. All rights reserved.</span>
+        <span>Built for worldwide job seekers across Bangladesh, India, UAE, UK, USA & beyond.</span>
       </div>
     </div>
   </footer>
 
-  <!-- ===================== FLOATING WhatsApp ===================== -->
-  <a href="https://wa.me/1234567890?text=Hi%21%20I%27m%20interested%20in%20the%20%244.99%20CV%20writing%20service." target="_blank" class="fab-wa" aria-label="Chat on WhatsApp">
+  <!-- Mobile Sticky Bottom Action Bar (Thumb-friendly mobile checkout) -->
+  <div class="mobile-sticky-bar">
+    <a href="https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600" target="_blank" class="mobile-bar-btn mobile-bar-stripe">
+      <i class="fa-solid fa-bolt"></i> Order $4.99
+    </a>
+    <a href="https://wa.me/8801742761220?text=Hi%21%20I%20want%20to%20order%20the%20$4.99%20CV%20Package." target="_blank" class="mobile-bar-btn mobile-bar-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+
+  <!-- Floating WhatsApp Action Button for Desktop -->
+  <a href="https://wa.me/8801742761220?text=Hi%21%20I%27m%20interested%20in%20the%20$4.99%20CV%20writing%20service." 
+     target="_blank" 
+     class="floating-whatsapp" 
+     aria-label="Chat with CV Expert on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
+    <span class="floating-tooltip">Chat with CV Expert</span>
   </a>
 
   <script src="script.js"></script>
