@@ -70,6 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
     navBackdrop.addEventListener("click", closeMobileNav);
   }
 
+  const drawerClose = document.getElementById("drawerClose");
+  if (drawerClose) {
+    drawerClose.addEventListener("click", closeMobileNav);
+  }
+
   // Close nav on any link click
   document.querySelectorAll(".nav__link, .mobile-nav-cta").forEach((link) => {
     link.addEventListener("click", closeMobileNav);
