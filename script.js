@@ -1,181 +1,153 @@
 /**
- * CareerBoost CV Landing Page - Interactive Scripts
- * Handles:
- * 1. Stripe Payment Links integration (Zero-backend Stripe checkout)
- * 2. WhatsApp dynamic message generator
- * 3. FAQ Accordion
- * 4. Template Filter Tabs
- * 5. Mobile Navigation Menu
+ * CareerForge — Premium CV Landing Page
+ * Interactive JS: Scroll Reveal, Accordion, Mobile Nav
+ *
+ * The $4.99 Stripe Payment Link is hardcoded directly in the HTML <a> tags.
+ * No JS redirect needed — it opens directly on Stripe's hosted checkout page.
  */
 
-// =========================================================================
-// 1. CONFIGURATION (Edit these links with your actual Stripe & WhatsApp info)
-// =========================================================================
-const CONFIG = {
-  // Your international phone number with country code (e.g. 15551234567 or 8801700000000)
-  whatsappNumber: "1234567890", 
+document.addEventListener('DOMContentLoaded', () => {
 
-  // Put your Stripe Payment Links here (generated in 2 mins from Stripe Dashboard)
-  // Format: "https://buy.stripe.com/..."
-  stripeLinks: {
-    "Basic CV Package": "https://buy.stripe.com/test_basic_cv_499",
-    "Professional CV": "https://buy.stripe.com/test_pro_cv_999",
-    "CV + Cover Letter": "https://buy.stripe.com/test_cv_cover_1499",
-    "CV + LinkedIn Revamp": "https://buy.stripe.com/test_cv_linkedin_1999",
-    "Complete Job Package": "https://buy.stripe.com/test_complete_bundle_2499"
-  }
-};
+  // ============================================================
+  // 1. SCROLL REVEAL (Intersection Observer)
+  // ============================================================
+  const revealEls = document.querySelectorAll('[data-reveal], [data-reveal-delay]');
 
-// =========================================================================
-// 2. Stripe Checkout Modal & Payment Link Handling
-// =========================================================================
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("stripeModal");
-  const modalBackdrop = document.getElementById("modalBackdrop");
-  const modalClose = document.getElementById("modalClose");
-  const modalPackageTitle = document.getElementById("modalPackageTitle");
-  const modalPackagePrice = document.getElementById("modalPackagePrice");
-  const modalStripeLink = document.getElementById("modalStripeLink");
-  const modalWhatsAppLink = document.getElementById("modalWhatsAppLink");
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
 
-  const stripePayButtons = document.querySelectorAll(".stripe-pay-btn");
+  revealEls.forEach((el) => revealObserver.observe(el));
 
-  stripePayButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const packageName = btn.getAttribute("data-package") || "Professional CV";
-      const price = btn.getAttribute("data-price") || "4.99";
-      
-      // Determine Stripe link
-      const targetStripeLink = CONFIG.stripeLinks[packageName] || btn.getAttribute("data-stripe-link");
+  // ============================================================
+  // 2. STICKY NAV — add shadow on scroll
+  // ============================================================
+  const nav = document.getElementById('nav');
 
-      // Set modal content
-      modalPackageTitle.textContent = packageName;
-      modalPackagePrice.textContent = `$${price}`;
-      modalStripeLink.href = targetStripeLink;
-
-      // Set dynamic WhatsApp order message
-      const encodedMsg = encodeURIComponent(
-        `Hi! I would like to order the "${packageName}" for $${price}. Please share payment and order requirements.`
-      );
-      modalWhatsAppLink.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodedMsg}`;
-
-      // Open modal
-      openModal();
-    });
-  });
-
-  function openModal() {
-    modal.classList.add("open");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeModal() {
-    modal.classList.remove("open");
-    document.body.style.overflow = "auto";
-  }
-
-  if (modalClose) modalClose.addEventListener("click", closeModal);
-  if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);
-
-  // Close on Escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("open")) {
-      closeModal();
+  const onScroll = () => {
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.5)';
+    } else {
+      nav.style.boxShadow = 'none';
     }
-  });
+  };
 
-  // =========================================================================
-  // 3. FAQ Accordion Toggle
-  // =========================================================================
-  const accordionHeaders = document.querySelectorAll(".accordion-header");
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-  accordionHeaders.forEach((header) => {
-    header.addEventListener("click", () => {
-      const item = header.parentElement;
-      const content = item.querySelector(".accordion-content");
-      const isActive = item.classList.contains("active");
+  // ============================================================
+  // 3. MOBILE HAMBURGER MENU
+  // ============================================================
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('navMenu');
 
-      // Close all other accordion items
-      document.querySelectorAll(".accordion-item").forEach((otherItem) => {
-        if (otherItem !== item) {
-          otherItem.classList.remove("active");
-          const otherContent = otherItem.querySelector(".accordion-content");
-          if (otherContent) otherContent.style.maxHeight = null;
-        }
-      });
-
-      // Toggle current
-      if (isActive) {
-        item.classList.remove("active");
-        content.style.maxHeight = null;
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      // Animate hamburger bars
+      const bars = hamburger.querySelectorAll('span');
+      if (isOpen) {
+        bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        bars[1].style.opacity   = '0';
+        bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
       } else {
-        item.classList.add("active");
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    });
-  });
-
-  // Open first FAQ by default
-  if (accordionHeaders.length > 0) {
-    accordionHeaders[0].click();
-  }
-
-  // =========================================================================
-  // 4. Template Filter Tabs
-  // =========================================================================
-  const tabButtons = document.querySelectorAll(".template-tab-btn");
-  const templateCards = document.querySelectorAll(".template-card");
-
-  tabButtons.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      // Remove active class from all tabs
-      tabButtons.forEach((b) => b.classList.remove("active"));
-      tab.classList.add("active");
-
-      const filter = tab.getAttribute("data-filter");
-
-      templateCards.forEach((card) => {
-        const category = card.getAttribute("data-category");
-        if (filter === "all" || category === filter) {
-          card.style.display = "block";
-          card.style.animation = "fadeIn 0.4s ease";
-        } else {
-          card.style.display = "none";
-        }
-      });
-    });
-  });
-
-  // =========================================================================
-  // 5. Mobile Menu Toggle
-  // =========================================================================
-  const mobileToggle = document.getElementById("mobileToggle");
-  const navMenu = document.getElementById("navMenu");
-
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
-      const icon = mobileToggle.querySelector("i");
-      if (navMenu.classList.contains("open")) {
-        icon.className = "fa-solid fa-xmark";
-      } else {
-        icon.className = "fa-solid fa-bars";
+        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
       }
     });
 
-    // Close mobile menu when clicking a link
-    navMenu.querySelectorAll(".nav-link").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("open");
-        const icon = mobileToggle.querySelector("i");
-        if (icon) icon.className = "fa-solid fa-bars";
+    // Close when a link is clicked
+    navMenu.querySelectorAll('.nav__link').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.querySelectorAll('span').forEach(b => {
+          b.style.transform = '';
+          b.style.opacity   = '';
+        });
       });
     });
   }
 
-  // Update static WhatsApp links in the page with the configured phone number
-  document.querySelectorAll('a[href*="YOUR_PHONE_NUMBER"]').forEach((a) => {
-    a.href = a.href.replace("YOUR_PHONE_NUMBER", CONFIG.whatsappNumber);
+  // ============================================================
+  // 4. FAQ ACCORDION
+  // ============================================================
+  const accordionItems = document.querySelectorAll('.accordion__item');
+
+  accordionItems.forEach((item) => {
+    const header = item.querySelector('.accordion__header');
+    const body   = item.querySelector('.accordion__body');
+
+    if (!header || !body) return;
+
+    header.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      accordionItems.forEach((other) => {
+        other.classList.remove('open');
+        const otherBody = other.querySelector('.accordion__body');
+        if (otherBody) otherBody.style.maxHeight = null;
+      });
+
+      // Open clicked (if it was closed)
+      if (!isOpen) {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
   });
+
+  // Open first FAQ item on load
+  if (accordionItems.length > 0) {
+    const first = accordionItems[0];
+    const firstBody = first.querySelector('.accordion__body');
+    first.classList.add('open');
+    if (firstBody) firstBody.style.maxHeight = firstBody.scrollHeight + 'px';
+  }
+
+  // ============================================================
+  // 5. MARQUEE — pause on hover
+  // ============================================================
+  const marqueeTrack = document.querySelector('.marquee-strip__track');
+  if (marqueeTrack) {
+    marqueeTrack.addEventListener('mouseenter', () => {
+      marqueeTrack.style.animationPlayState = 'paused';
+    });
+    marqueeTrack.addEventListener('mouseleave', () => {
+      marqueeTrack.style.animationPlayState = 'running';
+    });
+  }
+
+  // ============================================================
+  // 6. SMOOTH ACTIVE NAV HIGHLIGHT ON SCROLL
+  // ============================================================
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav__link');
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  sections.forEach((sec) => sectionObserver.observe(sec));
+
 });
