@@ -15,13 +15,13 @@ const CONFIG = {
   // Primary Stripe Payment Link for $4.99 Basic CV
   stripeBasicLink: "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
 
-  // Stripe Payment Links for other packages (can be updated anytime)
+  // Stripe Payment Links for each package
   stripeLinks: {
     "Basic CV Package": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
-    "Professional CV": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
-    "CV + Cover Letter": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
-    "CV + LinkedIn Revamp": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
-    "Complete Job Package": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600"
+    "Professional CV": "https://buy.stripe.com/test_dRm00l1kietm4yf7BC3F601",
+    "CV + Cover Letter": "https://buy.stripe.com/test_7sYaEZ0ge70Ud4LaNO3F602",
+    "CV + LinkedIn Revamp": "https://buy.stripe.com/test_4gM3cx6EC4SMfcT5tu3F603",
+    "Complete Job Package": "https://buy.stripe.com/test_6oU14p1ki4SM1m3cVW3F604"
   }
 };
 

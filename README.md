@@ -84,15 +84,15 @@ Open `script.js` to customize your details:
 ```javascript
 const CONFIG = {
   // Your WhatsApp number with country code (e.g. 88017XXXXXXXX or 1XXXXXXXXXX)
-  whatsappNumber: "1234567890",
+  whatsappNumber: "8801742761220",
 
   // Your Stripe Payment Links generated from Stripe Dashboard
   stripeLinks: {
-    "Basic CV Package": "https://buy.stripe.com/YOUR_LINK_1",
-    "Professional CV": "https://buy.stripe.com/YOUR_LINK_2",
-    "CV + Cover Letter": "https://buy.stripe.com/YOUR_LINK_3",
-    "CV + LinkedIn Revamp": "https://buy.stripe.com/YOUR_LINK_4",
-    "Complete Job Package": "https://buy.stripe.com/YOUR_LINK_5"
+    "Basic CV Package": "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
+    "Professional CV": "https://buy.stripe.com/test_dRm00l1kietm4yf7BC3F601",
+    "CV + Cover Letter": "https://buy.stripe.com/test_7sYaEZ0ge70Ud4LaNO3F602",
+    "CV + LinkedIn Revamp": "https://buy.stripe.com/test_4gM3cx6EC4SMfcT5tu3F603",
+    "Complete Job Package": "https://buy.stripe.com/test_6oU14p1ki4SM1m3cVW3F604"
   }
 };
 ```
