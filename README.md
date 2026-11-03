@@ -22,7 +22,7 @@ With Stripe Payment Links, Stripe hosts the entire PCI-compliant checkout page o
 5. **Post-Payment Setup (Crucial)**:
    - Under **"After payment"**, choose **"Don't show confirmation page"** and redirect to:
      - A **Google Form / Typeform** to collect the client's current resume & target role, OR
-     - Your **WhatsApp link**: `https://wa.me/YOUR_PHONE_NUMBER?text=Paid+CV+Package`
+     - Your **Online Application Intake Portal** or support email: `support@careerforgecv.com`
 6. Click **"Create Link"** and copy the resulting URL (e.g., `https://buy.stripe.com/xxxxxx`).
 7. Paste this URL into `script.js` in the `CONFIG.stripeLinks` section or directly inside the `data-stripe-link` attribute in `index.html`.
 
@@ -83,8 +83,8 @@ git push -u origin main
 Open `script.js` to customize your details:
 ```javascript
 const CONFIG = {
-  // Your WhatsApp number with country code (e.g. 88017XXXXXXXX or 1XXXXXXXXXX)
-  whatsappNumber: "8801742761220",
+  // Your support email
+  supportEmail: "support@careerforgecv.com",
 
   // Your Stripe Payment Links generated from Stripe Dashboard
   stripeLinks: {

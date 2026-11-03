@@ -1,16 +1,16 @@
 /**
- * CareerForge — Timeless Black & White Luxury CV Service
- * Mobile-First Interactive Engine:
- * 1. Seamless mobile navigation drawer
- * 2. Instant WhatsApp direct message generator (Phone: +8801742761220)
- * 3. Stripe checkout handling ($4.99 direct link)
+ * CareerForge — Archival Executive CV & Resume Atelier
+ * Interactive Application Engine:
+ * 1. Seamless mobile navigation drawer & touch handling
+ * 2. Executive CV Application & Client Intake Portal
+ * 3. Stripe checkout routing for all tiers ($4.99 to $24.99)
  * 4. FAQ Accordion
  * 5. Scroll Reveal animations
  */
 
 const CONFIG = {
-  // Client's verified WhatsApp number with country code
-  whatsappNumber: "8801742761220", 
+  // Direct Atelier Support Email
+  supportEmail: "support@careerforgecv.com", 
 
   // Primary Stripe Payment Link for $4.99 Basic CV
   stripeBasicLink: "https://buy.stripe.com/test_28E28tfb8992d4L5tu3F600",
@@ -154,18 +154,104 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================================
-  // 4. DYNAMIC WHATSAPP LINKS AUTO-INJECTION
+  // 4. EXECUTIVE CV APPLICATION & INTAKE PORTAL
   // ============================================================
-  // Ensures any WhatsApp element uses the configured phone number
-  document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
-    const currentHref = link.getAttribute("href");
-    if (!currentHref.includes(CONFIG.whatsappNumber)) {
-      // Preserve existing text query parameter if present
-      const url = new URL(currentHref, window.location.origin);
-      const textParam = url.searchParams.get("text") || "Hi! I want to order a professional CV.";
-      link.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(textParam)}`;
-    }
+  const appForm = document.getElementById("cvApplicationForm");
+  const packageSelect = document.getElementById("packageSelect");
+  const confirmationBox = document.getElementById("applicationConfirmation");
+  const refCodeSpan = document.getElementById("refCode");
+  const confirmedTierSpan = document.getElementById("confirmedTier");
+  const confirmedCheckoutBtn = document.getElementById("confirmedCheckoutBtn");
+  const newApplicationBtn = document.getElementById("newApplicationBtn");
+
+  // Pre-select package when clicking "Submit Application" from pricing cards
+  document.querySelectorAll(".apply-tier-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tier = btn.getAttribute("data-tier");
+      if (packageSelect && tier) {
+        // Find matching option
+        for (let i = 0; i < packageSelect.options.length; i++) {
+          if (packageSelect.options[i].value === tier || packageSelect.options[i].text.includes(tier)) {
+            packageSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      const nameInput = document.getElementById("applicantName");
+      if (nameInput) {
+        setTimeout(() => nameInput.focus(), 400);
+      }
+    });
   });
+
+  // Handle application submission
+  if (appForm) {
+    appForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById("applicantName");
+      const emailInput = document.getElementById("applicantEmail");
+      const roleInput = document.getElementById("targetRole");
+      const notesInput = document.getElementById("applicantNotes");
+      const turnaroundRadio = document.querySelector('input[name="turnaround"]:checked');
+
+      const name = nameInput ? nameInput.value.trim() : "";
+      const email = emailInput ? emailInput.value.trim() : "";
+      const role = roleInput ? roleInput.value.trim() : "";
+      const tier = packageSelect ? packageSelect.value : "Basic CV Package";
+      const notes = notesInput ? notesInput.value.trim() : "";
+      const turnaround = turnaroundRadio ? turnaroundRadio.value : "24h";
+
+      if (!name || !email || !role) {
+        alert("Please complete the required fields (Name, Email, Target Role).");
+        return;
+      }
+
+      // Generate unique archival dossier reference code
+      const randomRef = Math.floor(1000 + Math.random() * 9000);
+      const dossierCode = `CF-2026-${randomRef}`;
+
+      // Store in browser local storage
+      try {
+        localStorage.setItem("careerForgeApplication", JSON.stringify({
+          dossierCode,
+          name,
+          email,
+          role,
+          tier,
+          notes,
+          turnaround,
+          submittedAt: new Date().toISOString()
+        }));
+      } catch (err) {
+        console.warn("Storage notice:", err);
+      }
+
+      // Find matching Stripe checkout URL for the selected package
+      const checkoutUrl = CONFIG.stripeLinks[tier] || CONFIG.stripeBasicLink;
+
+      // Update confirmation dossier UI
+      if (refCodeSpan) refCodeSpan.textContent = dossierCode;
+      if (confirmedTierSpan) confirmedTierSpan.textContent = tier;
+      if (confirmedCheckoutBtn) confirmedCheckoutBtn.href = checkoutUrl;
+
+      // Swap view to confirmation receipt
+      appForm.style.display = "none";
+      if (confirmationBox) {
+        confirmationBox.classList.remove("hidden");
+        confirmationBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  }
+
+  // Handle "Edit Details / New Submission"
+  if (newApplicationBtn && appForm && confirmationBox) {
+    newApplicationBtn.addEventListener("click", () => {
+      confirmationBox.classList.add("hidden");
+      appForm.style.display = "block";
+      appForm.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 
   // ============================================================
   // 5. STICKY NAVBAR SHADOW & SCROLL INDICATOR

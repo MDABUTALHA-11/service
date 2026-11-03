@@ -294,11 +294,12 @@ img {
   gap: 14px;
 }
 
-.btn-wa-header {
+.btn-wa-header,
+.btn-app-header {
   background: #0f0f14;
   border: 1px solid var(--black-border-light);
-  color: var(--accent-wa);
-  font-size: 1.25rem;
+  color: var(--silver-light);
+  font-size: 1.15rem;
   width: 40px;
   height: 40px;
   padding: 0;
@@ -309,17 +310,19 @@ img {
   transition: var(--transition);
 }
 
-.btn-wa-header:hover {
-  background: #11281a;
-  border-color: #22c55e;
-  color: #4ade80;
+.btn-wa-header:hover,
+.btn-app-header:hover {
+  background: #181822;
+  border-color: var(--silver-mid);
+  color: var(--pure-white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.15);
 }
 
-.btn-wa-header i {
-  color: var(--accent-wa);
-  font-size: 1.25rem;
+.btn-wa-header i,
+.btn-app-header i {
+  color: var(--pure-white);
+  font-size: 1.15rem;
 }
 
 /* Mobile Hamburger Button */
@@ -1783,36 +1786,53 @@ img {
   color: var(--pure-black);
 }
 
-.mobile-bar-wa {
-  background: #0f2416;
-  border: 1px solid #1c4b2b;
-  color: #4ade80;
+.mobile-bar-wa,
+.mobile-bar-intake {
+  background: #111118;
+  border: 1px solid var(--black-border-light);
+  color: var(--pure-white);
+}
+
+.mobile-bar-wa:hover,
+.mobile-bar-intake:hover {
+  background: #1c1c28;
+  border-color: var(--silver-mid);
+  color: #ffffff;
 }
 
 /* ============================================================
-   DESKTOP FLOATING WHATSAPP
+   DESKTOP FLOATING APPLICATION INTAKE BUTTON
    ============================================================ */
+.floating-apply,
 .floating-whatsapp {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  width: 60px;
-  height: 60px;
-  background: var(--accent-wa);
-  color: var(--pure-white);
+  width: 58px;
+  height: 58px;
+  background: var(--pure-white);
+  color: var(--pure-black);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+  font-size: 1.35rem;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
   z-index: 900;
   transition: var(--transition);
+  border: 1px solid #d4d4d8;
 }
 
+.floating-apply:hover,
 .floating-whatsapp:hover {
   transform: scale(1.1) rotate(6deg);
-  background: #1eb857;
+  background: #f4f4f5;
+  box-shadow: 0 14px 40px rgba(255, 255, 255, 0.4);
+}
+
+.floating-apply i,
+.floating-whatsapp i {
+  color: var(--pure-black);
 }
 
 .floating-tooltip {
@@ -1831,6 +1851,7 @@ img {
   transition: opacity 0.3s;
 }
 
+.floating-apply:hover .floating-tooltip,
 .floating-whatsapp:hover .floating-tooltip {
   visibility: visible;
   opacity: 1;
@@ -1914,6 +1935,7 @@ img {
     display: flex;
   }
 
+  .floating-apply,
   .floating-whatsapp {
     display: none;
   }
@@ -1924,6 +1946,7 @@ img {
   }
 
   .btn-wa-header,
+  .btn-app-header,
   .header-cta {
     display: none;
   }
@@ -2032,5 +2055,263 @@ img {
   .footer-bottom-inner {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* ============================================================
+   EXECUTIVE CV APPLICATION & INTAKE PORTAL SECTION
+   ============================================================ */
+.application-section {
+  background: linear-gradient(180deg, var(--black-pitch) 0%, #08080c 50%, var(--black-pitch) 100%);
+  border-top: 1px solid var(--black-border);
+  border-bottom: 1px solid var(--black-border);
+  position: relative;
+}
+
+.application-container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.app-card {
+  position: relative;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: var(--radius-sm);
+  padding: 44px 36px;
+  box-shadow: var(--shadow-archival);
+}
+
+.app-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: calc(var(--radius-sm) - 4px);
+  pointer-events: none;
+}
+
+.app-corner {
+  position: absolute;
+  color: var(--silver-dim);
+  font-size: 0.9rem;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.app-corner-tl { top: 12px; left: 12px; }
+.app-corner-tr { top: 12px; right: 12px; }
+.app-corner-bl { bottom: 12px; left: 12px; }
+.app-corner-br { bottom: 12px; right: 12px; }
+
+.app-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-family: var(--font-classical);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--silver-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-label i {
+  color: var(--silver-mid);
+  font-size: 0.85rem;
+}
+
+.form-control {
+  width: 100%;
+  background: #08080b;
+  border: 1px solid var(--black-border-light);
+  border-radius: var(--radius-xs);
+  padding: 12px 16px;
+  color: var(--pure-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--silver-mid);
+  background: #0c0c10;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.form-control::placeholder {
+  color: var(--silver-dim);
+  font-size: 0.88rem;
+}
+
+select.form-control {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a1a1aa' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px;
+}
+
+select.form-control option {
+  background: #0d0d12;
+  color: var(--pure-white);
+  padding: 10px;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+.form-note {
+  font-size: 0.78rem;
+  color: var(--silver-dim);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.turnaround-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #07070a;
+  border: 1px solid var(--black-border);
+  padding: 12px 16px;
+  border-radius: var(--radius-xs);
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--silver-light);
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: var(--pure-white);
+  cursor: pointer;
+}
+
+.app-submit-group {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.app-privacy-guarantee {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--silver-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Confirmation Box */
+.app-confirmation {
+  text-align: center;
+  padding: 24px 10px;
+}
+
+.app-confirmation.hidden {
+  display: none;
+}
+
+.confirmation-seal {
+  font-size: 2.2rem;
+  color: var(--silver-bright);
+  margin-bottom: 12px;
+}
+
+.confirmation-title {
+  font-family: var(--font-classical);
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  color: var(--pure-white);
+}
+
+.confirmation-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--silver-mid);
+  margin: 16px auto;
+}
+
+.confirmation-msg {
+  color: var(--silver-mid);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.confirmation-ref {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #08080c;
+  border: 1px solid var(--black-border-light);
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 24px;
+}
+
+.ref-label {
+  font-family: var(--font-classical);
+  font-size: 0.8rem;
+  color: var(--silver-dim);
+}
+
+.ref-code {
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--pure-white);
+  letter-spacing: 0.1em;
+}
+
+.confirmation-summary {
+  background: #060608;
+  border: 1px solid var(--black-border);
+  border-radius: var(--radius-xs);
+  padding: 16px;
+  max-width: 480px;
+  margin: 0 auto 24px auto;
+  text-align: left;
+  font-size: 0.88rem;
+  color: var(--silver-light);
+  line-height: 1.8;
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .app-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-card {
+    padding: 30px 18px;
   }
 }
