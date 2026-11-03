@@ -296,25 +296,30 @@ img {
 
 .btn-wa-header {
   background: #0f0f14;
-  border: 1px solid var(--black-border);
-  color: var(--silver-light);
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 8px 16px;
+  border: 1px solid var(--black-border-light);
+  color: var(--accent-wa);
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  transition: var(--transition);
 }
 
 .btn-wa-header:hover {
-  background: #181822;
-  border-color: var(--silver-mid);
-  color: var(--pure-white);
+  background: #11281a;
+  border-color: #22c55e;
+  color: #4ade80;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
 }
 
 .btn-wa-header i {
   color: var(--accent-wa);
+  font-size: 1.25rem;
 }
 
 /* Mobile Hamburger Button */
